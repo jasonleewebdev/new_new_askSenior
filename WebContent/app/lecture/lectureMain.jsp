@@ -68,25 +68,31 @@
         <div class="article-line-new">
           <!-- 상단 목차 소개 -->
           <h3 class="order-new">전체강의</h3> 
+          
           <!-- 강의 소개 article 시작점 -->
+          <c:choose>
+          <c:when test="${not empty lectures and fn:length(lectures) > 0}">
+          <c:forEach var="lecture" items="${lectures}">
           <article class="article-new">
-            <div class="taturi-new">
-              <div class="article-img">
-                <a href="#">
-                  <img class="img-size-new"
-                  src=https://cdn.class101.net/images/01739432-88d8-416b-b0b5-621fb7e7ae44/640xauto.webp"
-                  alt="">
-                </a>
-              </div>
-              <div class="title">
-                <p class="ticher"><c:out value="{$lectureLecturerIntroduction}"/></p>
-                <!--강사 이름  -->
-              </div>
-              <!--강의 제목 -->
-              <div class="subtitle"></div>
-            
-            </div>
+            <a href="${pageContext.request.contextPath}/lecture/lectureDetail.lect?lectureNumber=${lecture.getlectureNumber()}">
+            	<div class="taturi-new">
+              		<div class="article-img">
+                  		<img class="img-size-new"><c:out value="${lecture.getlectureMainImage()}"/>
+              		</div>
+                	<!--강사 이름  -->
+              		<div class="title">
+                		<p class="ticher"><c:out value="${lecture.getlectureLecturerIntroduction}"/></p>
+              		</div>
+              		<!--강의 제목 -->
+              		<div class="subtitle"><c:out value="${lecture.getlectureTitle}"/></div>
+            	</div>
+            </a>
           </article>
+          </c:forEach>
+          </c:when>
+          </c:choose>
+          
+          <!--
           <article class="article-new">
             <div class="taturi-new">
               <div class="article-img">
@@ -107,6 +113,7 @@
               </div>
             </div>
           </article>
+          
           <article class="article-new">
             <div class="taturi-new">
               <div class="article-img">
@@ -126,6 +133,7 @@
               </div>
             </div>
           </article>
+          
           <article class="article-new">
             <div class="taturi-new">
               <div class="article-img">
@@ -348,7 +356,7 @@
                 국티원탑 과일티셔츠, 전국출장 완판올100%'김씨네과일 의 모든 것'
               </div>
             </div>
-          </article>
+          </article>-->
        
           <!-- 하단 버튼 -->
           <div class="Page">
@@ -369,8 +377,7 @@
             </div>
           </div>
         
-        </div>
-      </div>
+       </div>
     </section>
    
     <!-- aside 시작 -->

@@ -71,13 +71,13 @@
               
               <div class="label_box">
                 <label for="img_main01" class="file_style">메인 이미지 </label>
-                <label for="img_main02" class="file_style">강사 이미지</label>
-                <label for="img_main03" class="file_style">강의 소개 이미지</label>
+                <!--<label for="img_main02" class="file_style">강사 이미지</label>
+                <label for="img_main03" class="file_style">강의 소개 이미지</label>-->
               </div>
             <div class="upload">
               <img id="user_image01" src="#"  alt="">
               <input type="file" accept="image/*" name="lectureMainImage" onchange="PreviewImage01();" id="img_main01" >
-            </div>
+            </div><!--
             <div class="upload">
               <img id="user_image02" src="#"  alt="">
               <input type="file" accept="image/*" name="lectureLecturerImage" onchange="PreviewImage02();" id="img_main02" >
@@ -86,7 +86,7 @@
             <div class="upload">
               <img id="user_image03" src="#"  alt="">
               <input type="file" accept="image/*" name="lectureIntroductionImage" onchange="PreviewImage03();" id="img_main03" >
-            </div>
+            </div>-->
 
           <!-- <input type="file" name="file" id="file"> -->
           <div class="title">
@@ -184,7 +184,8 @@
 	   <article>
 		    <ul class="application" style="display:flex; justify-content:center;">
 		      <li>
-		        <input type="button" value="강의 작성 완료" class="application-button" onclick="send()"/>
+		        <%--<button type="submit" value="강의 작성 완료" class="application-button" >강의 작성 완료</button> --%>
+		       	<input type="submit" value="강의 작성 완료" class="application-button" onclick="send()"/>
 		      </li>
 		   	</ul>
         </article>
