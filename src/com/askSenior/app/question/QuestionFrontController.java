@@ -32,17 +32,26 @@ public class QuestionFrontController extends HttpServlet{
 		
 		if(target.equals("/question/listAll.ques")) {
 			//전체 질문 목록
+			//여기다가 멤버번호 세션 임의로 만듬
 			result=new ListAllController().execute(req, resp);
 		}
-		if(target.equals("/question/writeQuestion.ques")) {
+		else if(target.equals("/question/writeQuestion.ques")) {
 			//나도 질문하기 페이지로 이동
 			result=new Result();
 			result.setPath("/app/question/questionWrite.jsp");
 			result.setRedirect(false);
 		}
-		if(target.equals("/question/writeQuestionOK.ques")) {
+		else if(target.equals("/question/writeQuestionOK.ques")) {
 			//나도 질문하기 작성후 디비에 넘기기
 			result=new writeQuestionOKController().execute(req, resp);
+		}
+		else if(target.equals("/question/updateQuestion.ques")) {
+			//나도 질문하기 업데이트 페이지로 이동
+			result=new updateQuestionController().execute(req, resp);
+		}
+		else if(target.equals("/question/updateQuestionOK.ques")) {
+			//나도 질문하기 업데이트후 디비에 넘기기
+			result=new updateQuestionOKController().execute(req, resp);
 		}
 		else if(target.equals("/question/listLife.ques")) {
 			//생활 목록 현재 없음

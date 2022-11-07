@@ -82,9 +82,16 @@
 		values(2,#{questionCategory},#{questionTitle},#{questionContent})
 	</insert>
 	
-	<insert id="QuestionInsert" parameterType="questionVO">
+	<insert id="questionInsert" parameterType="questionVO">
 		insert into tbl_question(member_number,question_category,question_title,question_content)
 		values(#{memberNumber},#{questionCategory},#{questionTitle},#{questionContent})
 	</insert>
+	
+	<update id="questionUpdateInsert" parameterType="questionVO">
+		update tbl_question
+		set question_category=#{questionCategory},question_title=#{questionTitle},question_content=#{questionContent}
+		where member_number=#{memberNumber}
+	</update>
+	
 </mapper>
 

@@ -133,7 +133,7 @@
         <!-- 섹션 -->
         <section>
             <div class="card-wrapper">
-                <form action="${pageContext.request.contextPath}/question/writeQuestionOK.ques">
+                <form action="${pageContext.request.contextPath}/question/updateQuestionOK.ques?qbunho=${questionDetail.getQuestionNumber()}" method="post">
                     <div class="category-choose-title">분야 선택</div>
                     <select class="category-choose" name="categoryChoose">
                         <option>전체</option>
@@ -147,10 +147,10 @@
                     <div>
                         <span id="letterQ">Q.</span>
                         <input type="text" name="questionTitle" placeholder="물음표로 끝나는 질문을 입력해보세요."
-                        autocomplete="off" class="title" value="">
+                        autocomplete="off" class="title" value="${questionDetail.getQuestionTitle()}">
                     </div>
                     <div>
-                        <textarea name="qusetionContent" class="contents" placeholder="궁금한 것을 물어보세요." value=""></textarea>
+                        <textarea name="qusetionContent" class="contents" placeholder="궁금한 것을 물어보세요." value="">${questionDetail.getQuestionContent()}</textarea>
                     </div>
                     <div class="button-wrapper">
                         <!-- 질문 제목 또는 내용 한 글자라도 입력시 임시저장 버튼 활성화 하기 -->

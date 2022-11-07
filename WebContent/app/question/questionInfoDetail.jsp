@@ -183,11 +183,12 @@
                         </button>
                      
                     </div>
-                    
-                    <div id="updateAndRemove">
-                    	<button>수정</button>
-                    	<button>삭제</button>
-                    </div>
+                     <c:if test="${sessionScope.currentInfoMemberNumber == questionDetail.getMemberNumber()}">
+	                    <div id="updateAndRemove">
+	                    	<button onclick="location.href='${pageContext.request.contextPath}/question/updateQuestion.ques?qbunho=${questionDetail.getQuestionNumber()}'">수정</button>
+	                    	<button>삭제</button>
+	                    </div>
+                    </c:if>
                 </div>
             </div>
         <!--  
@@ -292,7 +293,7 @@
             <div class="pager-button-group">
                 <!-- 이전 버튼 또는 이후 버튼 없을 시 버튼 비활성화 하고 색 변경하기 -->
                 <button class="pager-button disabled-pager-button" disabled><i class="fa-solid fa-arrow-left"></i>이전 질문</button>
-                <button class="pager-button"><i class="fa-solid fa-list"></i>질문 목록</button>
+                <button class="pager-button" onclick="${pageContext.request.contextPath}location.href='/question/listAll.ques'"><i class="fa-solid fa-list"></i>질문 목록</button>
                 <button class="pager-button">다음 질문<i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </section>

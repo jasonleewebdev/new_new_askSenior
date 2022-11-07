@@ -195,9 +195,12 @@ div.question-title h1{
 }
 #updateAndRemove button{
 	display:inline-block;
-	width:200px;
+	width:150px;
 	height:50px;
 	padding:16px;
+	border-radius: 8px;
+    background-color: #0206af;
+    color: #fff;
 }
 /* 관심 질문, 추천, 좋아요 버튼 */
 .button-wrapper {

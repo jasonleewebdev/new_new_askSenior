@@ -173,8 +173,8 @@
                         <textarea name="answerContent" class="contents" placeholder="답변을 작성해주세요."></textarea>
                     </div>
                     <div class="button-wrapper">
-                        <button class="temp-btn">임시저장</button>
-                        <button class="btn-primary" type="submit">답변 등록</button>
+                        <!--잠시 비활성화  <button class="temp-btn">임시저장</button>-->
+                        <button class="btn-primary" type="submit" style="width:100%;">답변 등록</button>
                     </div>
                 </form>
         </section>

@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.askSenior.app.Execute;
 import com.askSenior.app.Result;
@@ -21,6 +22,19 @@ public class ListAllController implements Execute{
 		QuestionDAO questionDAO = new QuestionDAO();
 		Result result = new Result();
 		String temp = req.getParameter("page");
+		
+		
+		//세션 임의로 생성
+		/*
+		 * int currentInfoMemberNumber=2; HttpSession session = req.getSession();
+		 * session.setAttribute("currentInfoMemberNumber", currentInfoMemberNumber);
+		 */
+		//세션 검사 예시
+		/*
+		 * if((int)(session.getAttribute("questionMemberNumber")==null){ return; }
+		 */
+		//String valeu = (String)session.getAttribute("name");
+		
 		HashMap<String, Integer> pageMap = new HashMap<String, Integer>();
 		List<Integer> interestingQuestionCountList= new ArrayList<>();
 		List<Integer> likeQuestionCountList= new ArrayList<>();
