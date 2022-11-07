@@ -111,4 +111,8 @@ public SqlSession sqlSession;
 	public void noMemberNumberQuestionInsert(QuestionVO questionVO) {
 		sqlSession.selectOne("question.noMemberNumberQuestionInsert",questionVO);
 	}
+	
+	public void questionUpdateInsert(QuestionVO questionVO) {
+		sqlSession.update("question.questionUpdateInsert", questionVO);
+	}
 }
