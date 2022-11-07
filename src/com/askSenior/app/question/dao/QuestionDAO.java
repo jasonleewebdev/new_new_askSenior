@@ -108,11 +108,12 @@ public SqlSession sqlSession;
 		return sqlSession.selectOne("question.searchTitleTotal", searchTitle);
 	}
 	
-	public void noMemberNumberQuestionInsert(QuestionVO questionVO) {
-		sqlSession.selectOne("question.noMemberNumberQuestionInsert",questionVO);
+	public void questionInsert(QuestionVO questionVO) {
+		sqlSession.selectOne("question.questionInsert",questionVO);
 	}
 	
 	public void questionUpdateInsert(QuestionVO questionVO) {
+		System.out.println("questionUpdateInsert들어옴");
 		sqlSession.update("question.questionUpdateInsert", questionVO);
 	}
 }
