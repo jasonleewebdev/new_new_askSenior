@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main">
+	<select id="selectQuestion" resultType="questionVO">
+		select q.question_number, question_category, question_title from tbl_question q
+		join tbl_recommending_question r
+		on q.question_number  = r.question_number
+		group by q.question_number
+		order by count(r.member_number) desc
+		limit 8;
+	</select>
+	
+	<select id="selectAnswer" parameterType="string" resultType="recommendedAnswerDTO">
+		select z.question_title, z.answer_content
+		from (
+			select q.question_title, a.answer_content, count(r.member_number)
+			from tbl_question q
+			join tbl_answer a
+			on q.question_category = #{questionCategory} and q.question_number  = a.question_number
+			left join tbl_recommending_answer r
+			on a.answer_number = r.answer_number
+			group by a.answer_number
+			order by count(r.member_number) desc, a.answer_updated_date desc
+		) z
+		group by z.question_title
+		limit 3;
+	</select>
+</mapper>

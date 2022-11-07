@@ -1,0 +1,146 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    background-color:#fdfdfd;
+    /*
+    background-image: url("https://sportal.skuniv.ac.kr/img/wave-02.5be7bb6e.svg");
+    background-size: 50% 140px;
+    -webkit-animation: move_wave 10s linear infinite;
+    animation: move_wave 10s linear infinite;
+
+    */
+}
+#center{
+    width:480px;
+    height:753px;
+
+    margin:0 auto;
+    margin-top:100px;
+}
+#loginlogo{
+    width:480px;
+    height:100px;
+
+    padding:12px;
+
+    text-align:center;
+}
+
+#loginlogo>img{
+    width:290px;
+    height:100%;
+}
+#loginmain{
+    width:480px;
+    height:374px;
+
+    margin:10px 0px 5px;
+    padding:20px;
+
+    background:#ffffff;
+
+    border-radius: 35px;
+    box-shadow: 0 0 20px rgba(0,0,0,.2)!important;
+}
+#login_title{
+    width:434px;
+    height:72px;
+
+    padding:12px;
+
+    text-align:center;
+    color:#0000008a;
+
+   
+}
+.firstbox{
+    width:434px;
+    height:82px;
+
+    padding:12px 12px 0px;
+}
+
+.secondbox{
+    width:410px;
+    height:66px;
+
+    margin:4px 0px 0px;
+    padding:12px 0px 0px;
+}
+
+.thirdbox{
+    width:410px;
+    height:32px;
+
+    margin:0px 0px 8px;
+
+    border-bottom:1px solid #8e8e8e;
+}
+
+.input_inner{
+    width:380px;
+    height:32px;
+
+    padding:8px 0px;
+
+    line-height:100%;
+
+    color:#0000008a;
+
+    outline:none;
+    border:0;
+    border-bottom:1px solid #8e8e8e;
+}
+.inputimage{
+    display:inline-block;
+    
+    width:24px;
+    height:24px;
+    /*옆요소input과 수직정렬 맞추기*/
+    vertical-align:bottom;
+
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+#inputid{
+    background-image:url("../../assets/images/adminPerson.png");
+    
+}
+#inputpassword{
+    background-image:url("../../assets/images/adminPassword.png");
+    
+}
+
+#loginsubmit{
+    width:410px;
+    height:44px;
+    margin:0 5px 0 0;
+    margin-left:10px;
+    margin-top:50px;
+    padding:0px 19px;
+
+    background: linear-gradient(90deg,#5165e1,#63afea);
+    color: #fff;
+
+    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+
+    border-radius:30px;
+    border:0px;
+}
+#gourl{
+    width:480px;
+    height:60px;
+    text-align:center;
+}
+#gourl>span{
+    display:inline-block;
+    width:300px;
+    height:36px;
+
+    padding:0 16px;
+
+    color: #5165e1 !important;
+}

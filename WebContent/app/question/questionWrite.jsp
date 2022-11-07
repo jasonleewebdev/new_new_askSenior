@@ -1,0 +1,227 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+          <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/footer.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main/sidebar.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/question/questionWrite.css">
+    <!-- 아이콘 웹사이트 연결 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header>
+        <nav class="header">
+            <div class="header-wrapper">
+                <div class="header-container">
+                    <button class="header-hamburger">
+                        <img src="${pageContext.request.contextPath}/assets/images/hamburger.png">
+                    </button>
+
+                    <div class="header-left">
+                        <a class="header-logo">
+                            <img class="header-logo-img" src="${pageContext.request.contextPath}/assets/images/logoText.png">
+                        </a>
+                    </div>
+                    
+                    <div class="header-right">
+                        <div class="header-right-item search">
+                            <form class="form-search">
+                                <input type="search" placeholder="궁금한 것을 검색해보세요.">
+                            </form>
+                            <button>
+                                <img class="icon" src="${pageContext.request.contextPath}/assets/images/search.png">
+                            </button>
+                        </div>
+                        <div class="header-right-item register">
+                            <a class="button-register">로그인/회원가입</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- 네비게이션 -->
+    <div id="sidebar">
+        <div class="sidebar-bg"></div>
+        <div class="sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-wrapper">
+                    <div class="sidebar-header">
+                        <button class="sidebar-close">
+                            <img src="${pageContext.request.contextPath}/assets/images/close.png">
+                        </button>
+                        <a class="sidebar-home">
+                            <img>홈
+                        </a>
+                        <button class="sidebar-notice">
+                            <img src="${pageContext.request.contextPath}/assets/images/bell.png">
+                        </button>
+                    </div>
+                    <div class="sidebar-user">
+                        <div class="user-content">
+                            <span class="profile-image"></span>
+                            <a class="profile-login">
+                                로그인하세요
+                                <img src="${pageContext.request.contextPath}/assets/images/blackArrowRight.png">
+                            </a>
+                        </div>
+                        <div class="sidebar-main">
+                            <a href="">
+                                <div>질문하기</div>
+                            </a>
+                            <a href="">
+                                <div>강연</div>
+                            </a>
+                            <a href="">
+                                <div>이용방법</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sidebar-menu">
+                        <ul>
+                            <li><a href="${pageContext.request.contextPath}/question/listAll.ques">전체</a></li>
+                            <li><a href="">생활</a></li>
+                            <li><a href="${pageContext.request.contextPath}/question/listBusiness.ques">업무 및 회사생활</a></li>
+                            <li><a href="${pageContext.request.contextPath}/question/listRecruitment.ques">채용</a></li>
+                            <li><a href="${pageContext.request.contextPath}/question/listImprovement.ques">자기계발</a></li>
+                            <li><a href="${pageContext.request.contextPath}/question/listInvestment.ques">제테크</a></li>
+                            <li><a href="${pageContext.request.contextPath}/question/listFoundation.ques">창업</a></li>
+                            <li><a href="${pageContext.request.contextPath}/question/listEtc.ques">기타</a></li>
+                            <li><a href="">공지사항</a></li>
+                            <li><a href="">소개</a></li>
+                            <li><a href="">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-login">
+                        <a>로그인/회원가입</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 -->
+    <main>
+
+        <!-- 네비게이션 -->
+        <nav id="categoryNav">
+            <ul>
+                <li><a href="${pageContext.request.contextPath}/question/listAll.ques"">전체</a></li>
+                <li><hr><a href="${pageContext.request.contextPath}/question/listBusiness.ques">업무 및 회사생활</a></li>
+                <li><hr><a href="${pageContext.request.contextPath}/question/listRecruitment.ques">채용</a></li>
+                <li><hr><a href="${pageContext.request.contextPath}/question/listImprovement.ques">자기계발</a></li>
+                <li><hr><a href="${pageContext.request.contextPath}/question/listInvestment.ques">제테크</a></li>
+                <li><hr><a href="${pageContext.request.contextPath}/question/listFoundation.ques">창업</a></li>
+                <li><hr><a href="${pageContext.request.contextPath}/question/listEtc.ques">기타</a></li>
+                <li><hr><a href="#">공지사항</a></li>
+                <li><hr><a href="#">사이트 소개</a></li>
+            </ul>
+        </nav>
+
+        <!-- 섹션 -->
+        <section>
+            <div class="card-wrapper">
+                <form action="${pageContext.request.contextPath}/question/writeQuestionOK.ques">
+                    <div class="category-choose-title">분야 선택</div>
+                    <select class="category-choose" name="categoryChoose">
+                        <option>전체</option>
+                        <option>업무 및 회사생활</option>
+                        <option>채용</option>
+                        <option>자기계발</option>
+                        <option>제테크</option>
+                        <option>창업</option>
+                        <option>기타</option>
+                    </select>
+                    <div>
+                        <span id="letterQ">Q.</span>
+                        <input type="text" name="questionTitle" placeholder="물음표로 끝나는 질문을 입력해보세요."
+                        autocomplete="off" class="title">
+                    </div>
+                    <div>
+                        <textarea name="qusetionContent" class="contents" placeholder="궁금한 것을 물어보세요."></textarea>
+                    </div>
+                    <div class="button-wrapper">
+                        <!-- 질문 제목 또는 내용 한 글자라도 입력시 임시저장 버튼 활성화 하기 -->
+                        <button class="temp-btn disabled-button">임시저장</button>
+                        <%-- <button class="btn-primary" onclick="location.href='${pageContext.request.contextPath}/question/writeQuestionOK.ques'">질문 등록</button>--%>
+                        <button class="btn-primary" type="submit">질문 등록</button>
+                    </div>
+                </form>
+        </section>
+
+        <!-- 어사이드 -->
+        <aside>
+            <div class="notice-box">
+                <div class="notice-title">
+                    <i id="bulb" class="fa-solid fa-lightbulb"></i>이런 질문은 신고 받을 수 있어요.
+                </div>
+                <div class="notice-content-wrap">
+                    <ul class="notice-content">
+                        <li>다른 사람을 비방하는 질문</li>
+                        <li>주제와 적합하지 않는 질문</li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content-guide-box">
+                <div class="content-guide-title">
+                    <i id="book" class="fa-solid fa-book"></i>질문 작성 규칙
+                </div>
+                <div class="content-guide-content">
+                    <ul>
+                        <li>구체적으로 작성해주세요</li>
+                        <li>개인정보 노출은 피해주세요</li>
+
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="footer-container">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <img class="footer-logo-img" src="${pageContext.request.contextPath}/assets/images/logoPicture.png">
+                    </div>
+                    <div>
+                        <ul class="footer-menu">
+                            <li><a>시니어에게 물어봐 소개</a></li>
+                            <li><a>이용약관</a></li>
+                            <li><a>공지 사항</a></li>
+                        </ul>
+                        <ul class="footer-information">
+                            <li><span>법인명 : dev-web-junior 주식회사</span></li>
+                            <li><span>사업자 등록번호 : 111-11-11111</span></li>
+                            <li><span>대표자명 : 웹개발주니어</span></li>
+                            <li><span>통신판매업신고 : 2022-서울서초-7777호</span></li>
+                            <li><span>개인정보보호책임 : 코리아IT아카데미</span></li>
+                        </ul>
+                        <div class="copyright">© 2022 AskSenior. All rights reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/sidebar.js" type="text/javascript"></script>
+<script src="${pageContext.request.contextPath}/assets/js/faq.js" type="text/javascript"></script>
+</html>

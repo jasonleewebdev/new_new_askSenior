@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal</title>
+    <link rel="stylesheet" href="/modal.css">
+</head>
+<body>
+    <div class="modal"> <!-- 모달 시작 -->
+        <div class="open_scroll">
+            <div class="modal_inner" style="width: 700px;">
+                <div class="modal_inner_body">
+                    <div class="modal_header">
+                        <span class="modal_header_text">프로필 편집</span>
+                        <button class="modal_close_button">
+                            <img src="/img/closebtn.png" alt="">
+                        </button>
+                    </div>
+                    <div class="modal_section">
+                        <div class="modal_profile_box">
+                            <img class="modal_profile_img" style="width: 120px;  height: 120px;  background-color: aquamarine;"></img>
+                            <div class="modal_profile_cropper">
+                                <button class="add_picture">프로필 사진 추가</button>
+                            </div>
+                            <div class="modal_section_text_box">
+                                <div class="modal_section_text" style="color: rgb(20, 129, 227);">
+                                    <span class="section_text_bold">완성도 높은 프로필은 조회수를 높일 수 있어요.</span>
+                                    <br>
+                                    <span class="section_text_medium">
+                                        <div class="profile_icon_left">
+                                            <img src="" alt="">이미지
+                                        </div>
+                                        멋있는 프로필을 완성해주세요.
+                                        <div class="profile_icon_right">
+                                            <img src="" alt="">이미지
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal_user_info">
+                            <div class="first_box">
+                                <div class="first_box_title">닉네임</div>
+                                <div class="first_box_body">
+                                    <div>
+                                        <div class="first_input_box">
+                                            <input type="text" placeholder="최소 3자에서 최대 16자까지 입력할 수 있어요" maxlength="16" class="first-input">
+                                            <span class="available-length">0 / 16자</span>
+                                            <div class="first_description">
+                                                <img src="/img/warning.png" alt="" style="opacity: 0.1;">
+                                                닉네임은 질문 작성시에 노출되며, 답변에는 실명으로 노출 됩니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mid_box">
+                                <div class="mid_box_title">학력</div>
+                                <button class="add_item" style="max-width: 100%;">항목 추가<img src="/img/plus.png" class="mid_box_img"></button>
+                            </div>
+                            <div class="mid_box">
+                                <div class="mid_box_title">경력</div>
+                                <button class="add_item" style="max-width: 100%;">항목 추가<img src="/img/plus.png" class="mid_box_img"></button>
+                            </div>
+                            <div class="mid_box">
+                                <div class="mid_box_title">자격증/수료증</div>
+                                <button class="add_item" style="max-width: 100%;">항목 추가<img src="/img/plus.png" class="mid_box_img"></button>
+                            </div>
+                            <div class="last_box">
+                                <div class="last_box_title">인사말</div>
+                                <div class="last_box_text_area">
+                                    <textarea class="enroll_textarea" placeholder="최대 60자까지 입력할 수 있어요."></textarea>
+                                    <span class="available-length-60">0 / 60자</span>
+                                </div>
+                                <div class="last_description">
+                                    <img src="/img/warning.png" alt="" style="opacity: 0.1;">
+                                    더 좋은 프로필을 위해, 인사말을 입력해보세요.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal_save">
+                            <button class="save_btn">저장</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal_back"></div>
+    </div>
+</body>
+</html>
