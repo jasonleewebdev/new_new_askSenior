@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="lecture">
-	<!-- <select id="listAll" parameterType="map" resultType="lectureVO">
+	<select id="selectAll" parameterType="map" resultType="lectureVO">
 		select lecture_title, lecture_main_image, lecture_lecturer_introduction
 		from tbl_lecture
 		order by lecture_number desc
 		limit #{startRow}, #{rowCount}
-	</select> -->
+	</select>
 
 	<insert id="insert" parameterType="lectureVO">
 		insert into tbl_lecture (lecture_title, lecture_main_image, lecture_introduction_image, 
@@ -16,4 +16,8 @@
 			#{lectureLecturerImage}, #{lectureLecturerIntroduction}, #{lectureCategory}, #{lectureContent}, #{lectureDate}, 
 			#{lectureSignupStartDate}, #{lectureSignupEndDate}, #{lectureLocation}, #{lectureLimitNumber})
 	</insert>
+	
+	<select id="getTotal" resultType="_int">
+		select count(lecture_number) from tbl_lecture
+	</select>
 </mapper>
