@@ -149,13 +149,13 @@
                 <div>
                     <div class="button-wrapper">
                         <!-- 버튼 클릭 시 파란색으로 변화 하고 숫자를 1 올린다. 다시 클릭 시 숫자를 1 내리고 회색으로 바뀐다. -->
-                        <button class="interesting-question-button clicked-button">
+                        <button class="interesting-question-button clicked-button" onclick="alert('서비스개발중입니다.');">
                             <i class="fa-solid fa-star"></i> 관심 질문 <span id="interestingQuestionCount">${interestingCount}</span>
                         </button>
-                        <button class="recommanding-button">
+                        <button class="recommanding-button" onclick="alert('서비스개발중입니다.');">
                             <i class="fa-solid fa-thumbs-up"></i> 추천 <span id="recommandingQuestionCount">${recommendCount}</span>
                         </button>
-                        <button class="like-button">
+                        <button class="like-button" onclick="alert('서비스개발중입니다.');">
                             <i class="fa-solid fa-heart"></i> 좋아요 <span id="likeQuestionCount">${likeCount}</span>
                         </button>
                     </div>

@@ -26,9 +26,13 @@ public class ListAllController implements Execute{
 		
 		//세션 임의로 생성
 		
-		  int currentInfoMemberNumber=2; 
-		  HttpSession session = req.getSession();
-		   session.setAttribute("currentInfoMemberNumber", currentInfoMemberNumber);
+		
+		
+		
+		  int currentInfoMemberNumber=2; HttpSession session = req.getSession();
+		  session.setAttribute("currentInfoMemberNumber", currentInfoMemberNumber);
+		 
+		 
 		 
 		//세션 검사 예시
 		/*
