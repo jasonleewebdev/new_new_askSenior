@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/main/main.css?after">
 </head>
 <body>
+	<%-- 주석주석 --%>
 	<!-- 헤더 사이드바 -->
 	<jsp:include page="${pageContext.request.contextPath }/app/main/header.jsp" />
 	
