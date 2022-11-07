@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admin">
+
+	<select id="selectAll" parameterType="map" resultType="memberVO">
+		select member_number, member_email, member_password, member_nickname, member_profile_image, member_greetings, member_join_type, member_name, member_phone_number
+		from tbl_member
+		order by member_number desc
+		limit #{startRow}, #{rowCount}
+	</select>
+
+
+	<!-- <select id="selectAll"  resultType="memberVO">
+		select * from tbl_member
+	</select> -->
+	
+	<select id="memberDetail" parameterType="_int" resultType="memberVO" >
+		select * from tbl_member where member_number = #{mbunho}
+	</select>
+	
+	<select id="memberTotal"  resultType="_int" >
+		select count(member_number) from tbl_member 
+	</select>
+	
+	<update id="memberUpdate" parameterType="memberVO">
+		update tbl_member 
+		set member_password = #{memberPassword}, member_profile_image = #{memberProfileImage}, member_greetings = #{memberGreetings}, member_join_type = #{memberJoinType}, member_email = #{memberEmail}, member_nickname = #{memberNickname}, member_name = #{memberName}, member_phone_number = #{memberPhoneNumber} 
+		where member_number = #{memberNumber}
+	</update>
+	
+	
+	<select id="questionAll" parameterType="map" resultType="questionVO">
+		select question_number, member_number, question_category, question_title, question_content, question_updated_date
+		from tbl_question
+		order by question_number desc
+		limit #{startRow}, #{rowCount}
+	</select>
+	
+	<!-- <select id="questionAll"  resultType="questionVO">
+		select * from tbl_question
+	</select> -->
+	
+	<select id="questionDetail" parameterType="_int" resultType="questionVO" >
+		select * from tbl_question where question_number = #{qbunho}
+	</select>
+	
+	<select id="questionTotal"  resultType="_int" >
+		select count(question_number) from tbl_question 
+	</select>
+	
+	<delete id="deleteQuestion" parameterType="_int">
+		delete from tbl_question where question_number = #{qbunho}
+	</delete>
+	
+	
+	
+	<select id="answerAll" parameterType="map" resultType="answerVO">
+		select answer_number, question_number, member_number, answer_content, answer_updated_date
+		from tbl_answer
+		order by answer_number desc
+		limit #{startRow}, #{rowCount}
+	</select>
+	
+	<!-- <select id="answerAll"  resultType="answerVO">
+		select * from tbl_answer
+	</select> -->
+	
+	<select id="answerDetail" parameterType="_int" resultType="answerVO" >
+		select * from tbl_answer where answer_number = #{abunho}
+	</select>
+	
+	<select id="answerTotal"  resultType="_int" >
+		select count(answer_number) from tbl_answer 
+	</select>
+	
+	<delete id="deleteAnswer" parameterType="_int">
+		delete from tbl_answer where answer_number = #{abunho}
+	</delete>
+	
+	<select id="lectureAll" parameterType="map" resultType="lectureVO">
+		select lecture_number, member_number, lecture_category, lecture_lecturer_introduction, lecture_content, lecture_date
+		from tbl_lecture
+		order by lecture_number desc
+		limit #{startRow}, #{rowCount}
+	</select>
+	
+	<!-- <select id="lectureAll"  resultType="lectureVO">
+		select * from tbl_lecture
+	</select> -->
+	
+	<select id="lectureDetail" parameterType="_int" resultType="lectureVO" >
+		select * from tbl_lecture where lecture_number = #{lbunho}
+	</select>
+	
+	<select id="lectureTotal"  resultType="_int" >
+		select count(lecture_number) from tbl_lecture 
+	</select>
+	
+	<select id="noticeAll" parameterType="map" resultType="noticeVO">
+		select notice_number, notice_title, notice_content, notice_updated_date, notice_category
+		from tbl_notice
+		order by notice_number desc
+		limit #{startRow}, #{rowCount}
+	</select>
+	
+	<!-- <select id="noticeAll"  resultType="noticeVO">
+		select * from tbl_notice
+	</select -->
+	
+	<select id="noticeDetail" parameterType="_int" resultType="noticeVO" >
+		select * from tbl_notice where notice_number = #{nbunho}
+	</select>
+
+	<select id="noticeTotal"  resultType="_int" >
+		select count(notice_number) from tbl_notice 
+	</select>
+
+	<update id="noticeUpdate" parameterType="noticeVO">
+		update tbl_notice 
+		set notice_title = #{noticeTitle}, notice_category = #{noticeCategory}, notice_content = #{noticeContent}
+		where notice_number = #{noticeNumber}
+	</update>
+</mapper>

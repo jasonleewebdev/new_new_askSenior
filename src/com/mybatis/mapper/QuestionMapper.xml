@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="question">
+	<select id="selectAll" parameterType="map" resultType="questionVO">
+		select question_number,member_number,question_category,question_title,question_content,question_updated_date
+		from tbl_question
+		order by question_number desc
+		limit #{startRow}, #{rowCount}
+	</select>
+	
+	<select id="getTotal" resultType="_int">
+		select count(question_number) from tbl_question
+	</select>
+	<select id="selectCategory" parameterType="categoryPagenationDTO" resultType="questionVO">
+		select question_number,member_number,question_category,question_title,question_content,question_updated_date
+		from tbl_question
+		where question_category=#{searchCategory}
+		order by question_number desc
+		limit #{startRow}, #{rowCount}
+	</select>
+	<select id="selectCategoryTotal"  parameterType="categoryPagenationDTO" resultType="_int">
+		select count(question_number) from tbl_question
+		where question_category=#{searchCategory}
+	</select>
+	<select id="likeQuestionCount" parameterType="_int" resultType="_int">
+		select count(question_number) from tbl_like_question
+		where question_number = #{questionNumber} 
+	</select>
+	
+	<select id="recommendingQuestionCount" parameterType="_int" resultType="_int">
+		select count(question_number) from tbl_recommending_question
+		where question_number = #{questionNumber} 
+	</select>
+	<select id="interestingQuestionCount" parameterType="_int" resultType="_int">
+		select count(question_number) from tbl_interesting_question
+		where question_number = #{questionNumber} 
+	</select>
+	<insert id="plusInterestingQuestionCount" parameterType="likeQuestionVO">
+		insert into tbl_interesting_question(question_number,member_number) 
+		values (#{questionNumber} ,#{memberNumber})
+	</insert>
+	<delete id="minusInterestingQuestionCount" parameterType="likeQuestionVO">
+		delete from tbl_interesting_question
+		where question_number=#{questionNumber} and member_number=#{memberNumber}
+	</delete>
+	<select id="replyAnswerCount" parameterType="_int" resultType="_int">
+		select count(question_number) from tbl_answer
+		where question_number = #{questionNumber} 
+	</select>
+	
+	<select id="selectDetail" parameterType="_int" resultType="questionVO">
+		select question_number,member_number,question_category,question_title,question_content,question_updated_date
+		from tbl_question
+		where question_number = #{qbunho} 
+	</select>
+	
+	<select id="searchTitle" parameterType="newSearchTitlePagenationDTO" resultType="questionVO">
+		select question_number,member_number,question_category,question_title,question_content,question_updated_date
+		from tbl_question
+		where question_title like concat('%', #{searchTitle}, '%')
+		order by question_number desc
+		limit #{startRow}, #{rowCount} 
+	</select>
+	
+	
+	<!-- <select id="searchTitleTotal" parameterType="newSearchTitlePagenationDTO" resultType="_int">
+		select count(question_number)
+		from tbl_question
+		where question_title like concat('%', #{searchTitle}, '%')
+		
+	</select>  -->
+	
+	<select id="searchTitleTotal" parameterType="string" resultType="_int">
+		select count(question_number)
+		from tbl_question
+		where question_title like concat('%', #{searchTitle}, '%')
+		
+	</select>
+	
+	<insert id="noMemberNumberQuestionInsert" parameterType="questionVO">
+		insert into tbl_question(member_number,question_category,question_title,question_content)
+		values(2,#{questionCategory},#{questionTitle},#{questionContent})
+	</insert>
+	
+	<insert id="QuestionInsert" parameterType="questionVO">
+		insert into tbl_question(member_number,question_category,question_title,question_content)
+		values(#{memberNumber},#{questionCategory},#{questionTitle},#{questionContent})
+	</insert>
+</mapper>
+

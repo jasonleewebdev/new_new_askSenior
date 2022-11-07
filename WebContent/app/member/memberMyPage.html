@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myPage</title>
+    <!-- <link rel="stylesheet" href="/header.css"> -->
+    <link rel="stylesheet" href="/memberMyPage.css">
+    <!-- <link rel="stylesheet" href="/footer.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="layout">
+        <div>
+            <div class="wrap">
+                    <img class="channel_talk_button" src="https://www.a-ha.io/_nuxt/img/ahabot_desktop.a022535.png" alt="">
+                    <nav class="header">
+                        <div class="header-wrapper">
+                            <div class="header-container" >
+                                <button class="header-hamburger">
+                                    <img src="../../assets/images/hamburger.png">
+                                </button>
+                                <div class="header-left">
+                                    <!--로고-->
+                                    <a class="header-logo">
+                                        <!-- <img class="logo-img" src="">  -->
+                                        
+                                    </a>
+                                </div>
+                                <div class="header-right">
+                                    <div class="header-right-item search">
+                                        <!--검색창-->
+                                        <form class="form-search">
+                                            <input type="search" placeholder="궁금한 것을 검색해보세요.">
+                                        </form>
+                                        <button>
+                                            <img class="icon" src="../img/search.png">
+                                        </button>
+                                    </div>
+                                    <!-- 아이콘 -->
+                                    <img src="" alt="" class="bell">
+                                    <button class="folder">
+                                    </button>
+                                    <!-- 만들기 -->
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                <div class="main_page">
+                    <div class="main_header">
+                        <div class="h_container">
+                            <button class="h_button"></button>
+                            <button class="h_button edit_btn">지식프로필 편집</button>
+                            <button class="h_button logout">로그아웃</button>
+                        </div>
+                    </div>
+                    <div class="main_nav">
+                        <div class="n_container">
+                            <ul class="nav_ul">
+                                <li class="profile_tab_1">
+                                    <a href="">지식 프로필</a>
+                                </li>
+                                <li class="profile_tab_2">
+                                    <a href="">답변 0</a>
+                                </li>
+                                <li class="profile_tab_3">
+                                    <a href="">질문 0</a>
+                                </li>
+                                <li class="profile_tab_4">
+                                    <a href="">관심 질문 0</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main_section">
+                        <aside class="profile_aside">
+                            <div class="profile_user">
+                                <div>
+                                    <div class="profile_user_top">
+                                        <div class="profile_user_img" src="../../assets/images/grayProfile.svg">
+                                            <span></span>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="profile_user_mid">
+                                        <span class="user_nick">ask_senior</span>
+                                    </div>
+                                    <div class="profile_user_bot">
+                                        <div class="profile_user_stats">
+                                            <h5 class="p_text">지식활동</h5>
+                                            <div class="p_stats_item">
+                                                <span class="p_btn">
+                                                    <i class="fa-solid fa-q"></i>
+                                                    &nbsp;
+                                                    질문
+                                                </span>
+                                                <span class="p_btn_count">0개</span>
+                                            </div>
+                                            <div class="p_stats_item">
+                                                <span class="p_btn">
+                                                    <i class="fa-solid fa-a"></i>
+                                                    &nbsp;
+                                                    답변
+                                                </span>
+                                                <span class="p_btn_count">0개</span>
+                                            </div>
+                                        </div>
+                                        <div class="profile_user_stats">
+                                            <h5 class="p_text">획득한 반응</h5>
+                                            <div class="p_stats_item">
+                                                <span class="p_btn" >
+                                                    <i class="fa-solid fa-heart"></i>
+                                                    &nbsp;
+                                                    관심 질문
+                                                </span>
+                                                <span class="p_btn_count">0회</span>
+                                            </div>
+                                            <div class="p_stats_item">
+                                                <span class="p_btn">
+                                                    <i class="fa-solid fa-thumbs-up"></i>
+                                                    &nbsp;
+                                                    질문 좋아요
+                                                </span>
+                                                <span class="p_btn_count">0회</span>
+                                            </div>
+                                            <div class="p_stats_item">
+                                                <span class="p_btn">
+                                                    <i class="fa-solid fa-comment"></i>
+                                                    &nbsp;
+                                                    추천 질문
+                                                </span>
+                                                <span class="p_btn_count">0회</span>
+                                            </div>
+                                            <div class="p_stats_item">
+                                                <span class="p_btn">
+                                                    <i class="fa-regular fa-thumbs-up"></i>
+                                                    &nbsp;
+                                                    답변 좋아요
+                                                </span>
+                                                <span class="p_btn_count">0회</span>
+                                            </div>
+                                            <div class="p_stats_item">
+                                                <span class="p_btn">
+                                                    <i class="fa-solid fa-message"></i>
+                                                    &nbsp;
+                                                    추천 답변
+                                                </span>
+                                                <span class="p_btn_count">0회</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                        <main class="profile_main">
+                            <div class="profile_index">
+                                <div class="profile_index_card">
+                                    <div class="profile_card">
+                                        <h4 class="profile_card_title">경력</h4>
+                                        <div class="profile_car_content">
+                                            <div class="no_item">
+                                                <div class="no_item_inner">
+                                                    <i class="fa-solid fa-briefcase"></i>
+                                                    <span class="no_item_title">등록된 경력이 없어요.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 경력  -->
+                                        <!-- <div class="profile_car_content shadow">
+                                            <ul>
+                                                <li class="li_shadow up">
+                                                    <div class="ripple">
+                                                        <i class="fa-solid fa-circle-dot" style="color: rgb(183, 183, 183);"></i>
+                                                    </div>
+                                                    <div>
+                                                        우정 유치원
+                                                    </div>
+                                                    <div>
+                                                        교사 &nbsp;·&nbsp;
+                                                        <span>2019. 3 ~</span>
+                                                        <span> 2022. 2</span>
+                                                    </div>
+                                                </li>
+                                                <li class="li_shadow down">
+                                                    <div class="ripple">
+                                                        <i class="fa-solid fa-circle-dot" style="color: #0206af;"></i>
+                                                    </div>
+                                                    <div>
+                                                        프리랜서
+                                                    </div>
+                                                    <div>
+                                                        프리랜서 &nbsp;·&nbsp;
+                                                        <span>2022. 3 ~</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div> -->
+                                    <div class="profile_card">
+                                        <h4 class="profile_card_title">학력</h4>
+                                        <div class="profile_car_content">
+                                            <div class="no_item">
+                                                <div class="no_item_inner">
+                                                    <i class="fa-solid fa-graduation-cap"></i>
+                                                    <span class="no_item_title">등록된 학력이 없어요.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 학력 -->
+                                    <!-- <div class="profile_car_content shadow">
+                                        <ul>
+                                            <li class="li_shadow down">
+                                                <div class="ripple">
+                                                    <i class="fa-solid fa-circle-dot" style="color: rgb(183, 183, 183);"></i>
+                                                </div>
+                                                <div>
+                                                    중앙대학교
+                                                </div>
+                                                <div>
+                                                    유아교육과 &nbsp;·&nbsp;
+                                                    <span>2012. 3 ~</span>
+                                                    <span> 2019. 2</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                    <div class="profile_card">
+                                        <h4 class="profile_card_title">자격증</h4>
+                                        <div class="profile_car_content">
+                                            <div class="no_item">
+                                                <div class="no_item_inner">
+                                                    <i class="fa-solid fa-address-card"></i>
+                                                    <span class="no_item_title">등록된 자격증이 없어요.</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 자격증 -->
+                                    <!-- <div class="profile_car_content shadow">
+                                        <ul>
+                                            <li class="li_shadow down">
+                                                <div class="ripple">
+                                                    <i class="fa-solid fa-circle-dot" style="color: rgb(183, 183, 183);"></i>
+                                                </div>
+                                                <div>
+                                                    유치원 정교사(2급)
+                                                </div>
+                                                <div>
+                                                    교육부 &nbsp;·&nbsp;
+                                                    <span>2019</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <footer class="footer">
+                    <div class="footer-wrapper">
+                        <div class="footer-container">
+                            <div class="footer-left">
+                                <div class="footer-logo">
+                                    <img class="logo-img" src="">로고
+                                </div>
+                                <div>
+                                    <ul class="footer-menu">
+                                        <li>
+                                            <a>아하소개</a>
+                                        </li>
+                                        <li>
+                                            <a>이용약관</a>
+                                        </li>
+                                        <li>
+                                            <a>개인정보처리방침</a>
+                                        </li>
+                                        <li>
+                                            <a>자주 묻는 질문(FAQ)</a>
+                                        </li>
+                                        <li>
+                                            <a>채널톡 문의</a>
+                                        </li>
+                                        <li>
+                                            <a>채용</a>
+                                        </li>
+                                        <li>
+                                            <a>광고 문의</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="footer-information">
+                                        <li>
+                                            <span>법인명 : 더코퍼레이션 주식회사</span>
+                                        </li>
+                                        <li>
+                                            <span>사업자 등록번호 : 144-81-25784</span>
+                                        </li>
+                                        <li>
+                                            <button>사업자 정보확인</button>
+                                        </li>
+                                        <li>
+                                            <span>대표자명 : 서한울</span>
+                                        </li>
+                                        <li>
+                                            <span>통신판매업신고 : 2019-서울강남-02231호</span>
+                                        </li>
+                                        <li>
+                                            <span>개인정보보호책임 : </span>
+                                        </li>
+                                    </ul>
+                                    <div class="copyright">
+                                        © 2022 AskSenior. All rights reserved.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer-right"></div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+    function doDisplay(){ 	
+        $('.profile_main').hide();
+        $('.profile_main2').show();
+        $('.profile_main3').hide();
+        $('.profile_main4').hide();
+        
+        $('.profile_tab_1 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_3 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_4 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_2 a')
+        .css({'color':'#333','font-weight':'700','border-bottom':'2px solid #0260af','display':'inline-block','padding-top':'13px'});
+    }
+    function doDisplay1(){ 	
+        $('.profile_main').show();
+        $('.profile_main2').hide();
+        $('.profile_main3').hide();
+        $('.profile_main4').hide();
+        
+        $('.profile_tab_1 a')
+        .css({'color':'#333','font-weight':'700','border-bottom':'2px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_3 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_4 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_2 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+    }
+    function doDisplay3(){ 	
+        $('.profile_main').hide();
+        $('.profile_main2').hide();
+        $('.profile_main3').show();
+        $('.profile_main4').hide();
+        
+        $('.profile_tab_1 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_3 a')
+        .css({'color':'#333','font-weight':'700','border-bottom':'2px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_4 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_2 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+    }
+    function doDisplay4(){ 	
+        $('.profile_main').hide();
+        $('.profile_main2').hide();
+        $('.profile_main3').hide();
+        $('.profile_main4').show();
+        
+        $('.profile_tab_1 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_3 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_4 a')
+        .css({'color':'#333','font-weight':'700','border-bottom':'2px solid #0260af','display':'inline-block','padding-top':'13px'});
+        $('.profile_tab_2 a')
+        .css({'color':'#989898','font-weight':'0','border-bottom':'0px solid #0260af','display':'inline-block','padding-top':'13px'});
+    }
+</script>
+</html>

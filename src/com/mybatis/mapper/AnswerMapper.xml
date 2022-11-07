@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="answer">
+	<select id="selectAll"  resultType="answerVO">
+		select answer_number,question_number ,member_number ,answer_content ,answer_updated_date 
+		from tbl_answer
+		where question_number = #{questionNumber}
+		order by answer_number desc
+	
+	</select>
+	<select id="selectTotal"  resultType="_int">
+		select count(answer_number)
+		from tbl_answer
+		where question_number = #{questionNumber}
+		
+	</select>
+	
+	<select id="likeCount"  resultType="_int">
+		select count(answer_number)
+		from tbl_like_answer
+		where answer_number = #{answerNumber}
+	</select>
+	<select id="recommendCount"  resultType="_int">
+		select count(answer_number)
+		from tbl_recommending_answer
+		where answer_number = #{answerNumber}
+	</select>
+	
+	<insert id="noMemberNumberAnswerInsert" parameterType="answerVO">
+		insert into tbl_answer(question_number,member_number,answer_content)
+		values(#{questionNumber},2,#{answerContent})
+	</insert>
+	<insert id="AnswerInsert" parameterType="answerVO">
+		insert into tbl_answer(question_number,member_number,answer_content)
+		values(#{questionNumber},#{memberNumber},#{answerContent})
+	</insert>
+</mapper>

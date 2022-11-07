@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+   <settings>
+      <setting name="mapUnderscoreToCamelCase" value="true"/> <!--DB는 _ 를 사용하지만 java는 camel을사용하는데 알아서 변환해주는 것을 true로 한다.  -->
+   </settings>
+
+   <typeAliases>
+      <typeAlias type="com.askSenior.app.member.vo.MemberVO" alias="memberVO"/>
+      <typeAlias type="com.askSenior.app.question.vo.QuestionVO" alias="questionVO"/>
+      <typeAlias type="com.askSenior.app.answer.vo.AnswerVO" alias="answerVO"/>
+      <typeAlias type="com.askSenior.app.lecture.vo.LectureVO" alias="lectureVO"/>
+      <typeAlias type="com.askSenior.app.notice.vo.NoticeVO" alias="noticeVO"/>
+      <typeAlias type="com.askSenior.app.question.vo.LikeQuestionVO" alias="likeQuestionVO"/>
+      <typeAlias type="com.askSenior.app.question.vo.InterestingQuestionVO" alias="interestingQuestionVO"/>
+      <typeAlias type="com.askSenior.app.question.vo.RecommendingQuestionVO" alias="recommendingQuestionVO"/>
+      <typeAlias type="com.askSenior.app.question.vo.SearchTitlePagenationDTO" alias="searchTitlePagenationDTO"/>
+      <typeAlias type="com.askSenior.app.question.vo.NewSearchTitlePagenationDTO" alias="newSearchTitlePagenationDTO"/>
+      <typeAlias type="com.askSenior.app.question.vo.CategoryPagenationDTO" alias="categoryPagenationDTO"/>
+      <typeAlias type="com.askSenior.app.main.vo.RecommendedAnswerDTO" alias="recommendedAnswerDTO"/> 
+   </typeAliases>
+   
+   <environments default="mysql">
+      <environment id="mysql">
+         <transactionManager type="JDBC"/>
+         <dataSource type="POOLED">
+            <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="url" value="jdbc:mysql://localhost:3306/asksenior"/>
+            <property name="username" value="root"/>
+            <property name="password" value="1234"/>
+         </dataSource>
+      </environment>
+   </environments>
+   
+   <mappers>
+      <mapper resource="com/mybatis/mapper/MemberMapper.xml"/>
+      <mapper resource="com/mybatis/mapper/AdminMapper.xml"/>
+      <mapper resource="com/mybatis/mapper/AnswerMapper.xml"/>
+      <mapper resource="com/mybatis/mapper/LectureMapper.xml"/>
+      <mapper resource="com/mybatis/mapper/NoticeMapper.xml"/>
+      <mapper resource="com/mybatis/mapper/QuestionMapper.xml"/>
+      <mapper resource="com/mybatis/mapper/MainMapper.xml"/>
+   </mappers>
+</configuration>

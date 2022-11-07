@@ -1,0 +1,199 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pretendard",Helvetica,Arial,sans-serif;
+}
+
+button {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+.main_layout{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 80px 0;
+    background: #f3f5f9;
+}
+
+.main_layout .main_view {
+    width: 760px;
+    height: 500px;
+    position: absolute;
+    margin: 24px 297px 144px 297px;
+
+}
+
+.main {
+    height: 500px;
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+    display: flex;
+    height: 100%;
+    --tw-bg-opacity: 1;
+    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+    min-height: 500px;
+    box-shadow: 0 8px 16px rgb(182 190 204 / 50%);
+    border-radius: 8px;
+}
+
+.main .main_left {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(https://media.a-ha.io/aha-qna/assets/web/auth/visual_area.png),linear-gradient(180deg,#1831e6,#0206af);
+    background-size: cover;
+    border-radius: 8px 0 0 8px;
+}
+
+.main_left a {
+
+    top: 0;
+    width: 120px;
+    height: 72px;
+    color: #fff;
+}
+
+.main_left_text {
+    margin-top: 0.25rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.main .main_right {
+    width: 100%;
+    height: auto;
+    border-style: none;
+    border-radius: 0 8px 8px 0;
+}
+
+.main_right .screen_body {
+    padding-top: 2rem;
+    height: 100%;
+}
+
+.screen_wrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen_wrapper .screen_inner {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.experts {
+    margin-top: auto;
+}
+
+
+.screen_button {
+    padding: 10px 20px 4px;
+    position: relative;
+    width: 100%;
+    font-weight: 500;
+    --tw-text-opacity: 1;
+    color: rgba(28, 26, 24, var(--tw-text-opacity));
+}
+
+
+.start_kakao {
+    background-color: rgba(254, 225, 0, var(--tw-bg-opacity));
+    border: 0px;
+    cursor: pointer;
+}
+
+
+.start_naver {
+    background-color: rgba(0, 206, 56, var(--tw-bg-opacity));
+    color: white;
+    border: 0px;
+    cursor: pointer;
+}
+
+.start_email {
+    background-color: rgba(28, 26, 24, var(--tw-bg-opacity));
+    color: white;
+    border: 0px;
+    cursor: pointer;
+}
+
+.b_size {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border-width: 1px;
+    font-weight: 500;
+    width: 100%;
+    height: 56px;
+}
+
+.bottom_button {
+    border: 0px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border-width: 1px;
+    font-weight: 500;
+    font-size: 1rem;
+    width: 100%;
+    height: 56px;
+}
+
+.b_margin {
+    margin-bottom: 0.5rem;
+}
+
+use {
+    margin: 0;
+}
+
+
+.kakao_icon {
+
+    margin: 0px 13px 0px 0px;
+    width: 20px;
+    height: 20px;
+
+}
+
+.naver_icon {
+
+    margin: 0px 13px 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+
+.email_icon {
+
+    margin: 0px 13px 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+
