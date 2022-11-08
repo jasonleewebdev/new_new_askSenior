@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="lecture">
-	<select id="selectAll" parameterType="map" resultType="lectureVO">
-		select lecture_title, lecture_main_image, lecture_lecturer_introduction
+	<select id="selectAll" parameterType="lectureVO" resultType="lectureVO">
+		select lecture_title, lecture_main_image, lecture_lecturer_introduction, lecture_number
 		from tbl_lecture
 		order by lecture_number desc
-		limit #{startRow}, #{rowCount}
+		<!-- limit #{startRow}, #{rowCount}-->
 	</select>
 
 	<insert id="insert" parameterType="lectureVO">
