@@ -47,11 +47,11 @@ public class QuestionFrontController extends HttpServlet{
 		}
 		else if(target.equals("/question/updateQuestion.ques")) {
 			//나도 질문하기 업데이트 페이지로 이동
-//			result=new updateQuestionController().execute(req, resp);
+			result=new updateQuestionController().execute(req, resp);
 		}
 		else if(target.equals("/question/updateQuestionOK.ques")) {
 			//나도 질문하기 업데이트후 디비에 넘기기
-//			result=new updateQuestionOKController().execute(req, resp);
+			result=new updateQuestionOKController().execute(req, resp);
 		}
 		else if(target.equals("/question/deleteQuestionOK.ques")) {
 			//나도 질문하기 업데이트후 디비에 넘기기
