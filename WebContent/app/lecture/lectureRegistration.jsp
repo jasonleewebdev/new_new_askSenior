@@ -24,38 +24,38 @@
       <!-- 네비 시작점 -->
       <nav id="categoryNav">
         <ul>
-          <li><a href="#">전체강의</a></li>
+          <li><a href="${pageContext.request.contextPath}/lecture/listAll.lect">전체강의</a></li>
           <li>
             <hr />
-            <a href="#">새로 오픈한 강의</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">새로 오픈한 강의</a>
           </li>
           <li>
             <hr />
-            <a href="#">실시간 인기 TOP15</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">실시간 인기 TOP15</a>
           </li>
           <li>
             <hr />
-            <a href="#">트랜드</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">트랜드</a>
           </li>
           <li>
             <hr />
-            <a href="#">라이프스타일</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">라이프스타일</a>
           </li>
           <li>
             <hr />
-            <a href="#">창업</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">창업</a>
           </li>
           <li>
             <hr />
-            <a href="#">스타트업</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">스타트업</a>
           </li>
           <li>
             <hr />
-            <a href="#">기타</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">기타</a>
           </li>
           <li>
             <hr />
-            <a href="#">지난 강의</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">지난 강의</a>
           </li>
         </ul>
       </nav>
@@ -194,13 +194,9 @@
 	
       <!-- aside 시작점 -->
       <aside>
-        <div>
-          <a href="">
-          	<img src="http://sinchon.koreaisacademy.com/m/img/main2017/m_it_banner_211126.jpg"/>
-          </a>
-        </div>
-        <button>강의 신청하기</button>
-      </aside>
+       <!-- <div><a href="#" onclick="alert('서비스개발중입니다.');"><img src="http://sinchon.koreaisacademy.com/m/img/main2017/m_it_banner_211126.jpg"></a></div>-->
+       <button onclick="location.href='${pageContext.request.contextPath}/lecture/registration.lect'">강의 등록하기</button>
+   </aside>
      
     </main>
 <jsp:include page="${pageContext.request.contextPath}/app/main/footer.jsp"/>

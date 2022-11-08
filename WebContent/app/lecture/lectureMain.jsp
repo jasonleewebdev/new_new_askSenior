@@ -27,38 +27,38 @@
       <!-- 네비 시작점-->
     <nav id="categoryNav">
         <ul>
-          <li><a href="#">전체강의</a></li>
+          <li><a href="${pageContext.request.contextPath}/lecture/listAll.lect">전체강의</a></li>
           <li>
             <hr />
-            <a href="#">새로 오픈한 강의</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">새로 오픈한 강의</a>
           </li>
           <li>
             <hr />
-            <a href="#">실시간 인기 TOP15</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">실시간 인기 TOP15</a>
           </li>
           <li>
             <hr />
-            <a href="#">트랜드</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">트랜드</a>
           </li>
           <li>
             <hr />
-            <a href="#">라이프스타일</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">라이프스타일</a>
           </li>
           <li>
             <hr />
-            <a href="#">창업</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">창업</a>
           </li>
           <li>
             <hr />
-            <a href="#">스타트업</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">스타트업</a>
           </li>
           <li>
             <hr />
-            <a href="#">기타</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">기타</a>
           </li>
           <li>
             <hr />
-            <a href="#">지난 강의</a>
+            <a href="javascript:void(0)" onclick="alert('서비스개발중입니다.');">지난 강의</a>
           </li>
         </ul>
     </nav>
@@ -71,25 +71,30 @@
           
           <!-- 강의 소개 article 시작점 -->
           <c:choose>
-          <c:when test="${not empty lectures and fn:length(lectures) > 0}">
-          <c:forEach var="lecture" items="${lectures}">
-          <article class="article-new">
-            <a href="${pageContext.request.contextPath}/lecture/lectureDetail.lect?lectureNumber=${lecture.getlectureNumber()}">
-            	<div class="taturi-new">
-              		<div class="article-img">
-                  		<img class="img-size-new"><c:out value="${lecture.getlectureMainImage()}"/>
-              		</div>
-                	<!--강사 이름  -->
-              		<div class="title">
-                		<p class="ticher"><c:out value="${lecture.getlectureLecturerIntroduction}"/></p>
-              		</div>
-              		<!--강의 제목 -->
-              		<div class="subtitle"><c:out value="${lecture.getlectureTitle}"/></div>
-            	</div>
-            </a>
-          </article>
-          </c:forEach>
-          </c:when>
+	          <c:when test="${not empty lectures and fn:length(lectures) > 0}">
+		          <c:forEach var="lecture" items="${lectures}">
+			          <article class="article-new">
+			            <!-- <a href="${pageContext.request.contextPath}/lecture/lectureDetail.lect?lectureNumber=${lecture.getLectureNumber()}"> -->
+			            <a href="" onclick="alert('서비스개발중입니다.');">
+			            	<div class="taturi-new">
+			              		<div class="article-img">
+			                  		<%-- <img class="img-size-new"><c:out value="${lecture.getLectureMainImage()}"/>--%>
+			                  		<img class="img-size-new" src="${pageContext.request.contextPath}/upload/${lecture.getLectureMainImage()}"/>
+			              		</div>
+			                	<!--강사 이름  -->
+			              		<div class="title">
+			                		<p class="ticher"><c:out value="${lecture.getLectureLecturerIntroduction()}"/></p>
+			              		</div>
+			              		<!--강의 제목 -->
+			              		<div class="subtitle"><c:out value="${lecture.getLectureTitle()}"/></div>
+			            	</div>
+			            </a>
+			          </article>
+		          </c:forEach>
+	        	</c:when>
+	          <c:otherwise>
+	          	<p>등록된 강의가 없습니다.</p>
+	          </c:otherwise>
           </c:choose>
           
           <!--
@@ -361,17 +366,17 @@
           <!-- 하단 버튼 -->
           <div class="Page">
             <div class="page-width">
-              <button class="page-button">1</button>
-              <button class="page-button">2</button>
-              <button class="page-button">3</button>
-              <button class="page-button">4</button>
-              <button class="page-button">5</button>
-              <button class="page-button">6</button>
-              <button class="page-button">7</button>
-              <button class="page-button">8</button>
-              <button class="page-button">9</button>
-              <button class="page-button">10</button>
-              <span class="material-symbols-outlined page-arrow">
+              <button class="page-button" onclick="alert('서비스개발중입니다.');">1</button>
+              <button class="page-button" onclick="alert('서비스개발중입니다.');">2</button>
+              <button class="page-button" onclick="alert('서비스개발중입니다.');">3</button>
+              <button class="page-button" onclick="alert('서비스개발중입니다.');">4</button>
+              <button class="page-button" onclick="alert('서비스개발중입니다.');">5</button>
+              <button class="page-button" onclick="alert('서비스개발중입니다.');">6</button>
+              <button class="page-button" onclick="alert('서비스개발중입니다.');">7</button>
+              <button class="page-button" onclick="alert('서비스개발중입니다.');">8</button>
+              <button class="page-button" onclick="alert('서비스개발중입니다.');">9</button>
+              <button class="page-button" onclick="alert('서비스개발중입니다.');">10</button>
+              <span class="material-symbols-outlined page-arrow" onclick="alert('서비스개발중입니다.');">
                 arrow_right
               </span>
             </div>
@@ -382,8 +387,8 @@
    
     <!-- aside 시작 -->
     <aside>
-       <div><a href=""><img src="http://sinchon.koreaisacademy.com/m/img/main2017/m_it_banner_211126.jpg"></a></div>
-       <button>강의 신청하기</button>
+       <!-- <div><a href="#" onclick="alert('서비스개발중입니다.');"><img src="http://sinchon.koreaisacademy.com/m/img/main2017/m_it_banner_211126.jpg"></a></div>-->
+       <button onclick="location.href='${pageContext.request.contextPath}/lecture/registration.lect'">강의 등록하기</button>
    </aside>
 
 </main>
