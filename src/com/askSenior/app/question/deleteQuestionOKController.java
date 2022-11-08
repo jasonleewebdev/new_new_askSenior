@@ -8,13 +8,21 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.askSenior.app.Execute;
 import com.askSenior.app.Result;
+import com.askSenior.app.question.dao.QuestionDAO;
 
 public class deleteQuestionOKController implements Execute{
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServerException {
-		// TODO Auto-generated method stub
-		return null;
+		int qbunho=Integer.parseInt(req.getParameter("qbunho"));
+		QuestionDAO questionDAO = new QuestionDAO();
+		Result result = new Result();
+		
+		questionDAO.questionDelete(qbunho);
+		
+		result.setPath("/question/listAll.ques");
+		result.setRedirect(false);
+		return result;
 	}
 
 }

@@ -116,4 +116,8 @@ public SqlSession sqlSession;
 		System.out.println("questionUpdateInsert들어옴");
 		sqlSession.update("question.questionUpdateInsert", questionVO);
 	}
+	
+	public void questionDelete(int questionNumber) {
+		sqlSession.delete("question.questionDelete",questionNumber);
+	}
 }
