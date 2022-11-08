@@ -6,6 +6,7 @@ import java.rmi.ServerException;
 import javax.management.RuntimeErrorException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.askSenior.app.Execute;
 import com.askSenior.app.Result;
@@ -27,7 +28,11 @@ public class LoginOkController implements Execute{
 		 
 		memberNumber = memberDAO.login(memberEmail, memberPw);		
 		if(memberNumber!=0) {
-//			result.setPath(""); //¸ÞÀÎÆäÀÌÁö °æ·Î
+//			result.setPath(""); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+			int currentInfoMemberNumber=2; HttpSession session = req.getSession();
+			 session.setAttribute("currentInfoMemberNumber", currentInfoMemberNumber);
+			//result.setPath("/question/listAll.ques"); 
+			 result.setPath("/main/main.ma");
 		}
 		else{
 			result.setPath("/member/login.me?login=false");

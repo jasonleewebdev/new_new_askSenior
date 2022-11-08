@@ -10,7 +10,7 @@
       values({#memberEmail},#{memberPw})
    </insert>
    
-   <select id="Login" parameterType="map" resultType="_int">
-      select member_number from tbl_member where member_Email = #{memberEmail} and member_pw = #{memberPw}
+   <select id="login" parameterType="map" resultType="MemberVO">
+      select member_number from tbl_member where member_email = #{memberEmail} and member_password = #{memberPw}
    </select>
 </mapper>
