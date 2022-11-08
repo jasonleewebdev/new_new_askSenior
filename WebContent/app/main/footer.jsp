@@ -19,9 +19,9 @@
 					</div>
 					<div>
 						<ul class="footer-menu">
-							<li><a href="javascript:void(0)">시니어에게 물어봐 소개</a></li>
-							<li><a href="javascript:void(0)">이용약관</a></li>
-							<li><a href="javascript:void(0)">공지 사항</a></li>
+							<li><a href="javascript:void(0)" onclick="noService()">시니어에게 물어봐 소개</a></li>
+							<li><a href="javascript:void(0)" onclick="noService()">이용약관</a></li>
+							<li><a href="javascript:void(0)" onclick="noService()">공지 사항</a></li>
 						</ul>
 						<ul class="footer-information">
 							<li><span>법인명 : dev-web-junior 주식회사</span></li>
@@ -37,4 +37,10 @@
 		</div>
 	</footer>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+	function noService(){
+		alert("서비스를 준비중입니다. 불편을 끼쳐 드려 죄송합니다.");
+	};
+</script>
 </html>

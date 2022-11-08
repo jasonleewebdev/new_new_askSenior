@@ -37,13 +37,20 @@
 						</div>
 						<div class="header-right-item register">
 							<c:choose>
-								<c:when test="${not empty sessionScope.memberNumber }">
-									<a href="javascript:void(0)">
-										<img class="header-profile-image"src="${pageContext.request.contextPath }/assets/images/adminPerson.png">
-									</a>
-								</c:when>
+								<c:when test="${not empty sessionScope.currentInfoMemberNumber }">
+									<c:choose>
+										<c:when test="${sessionScope.memberNumber == 1 }">
+											<a class="button-register" href="${pageContext.request.contextPath }/admin/memberList.admin">관리자 페이지</a>
+										</c:when>
+										<c:otherwise>
+											<a href="javascript:void(0)" onclick="noService()">
+												<img class="header-profile-image"src="${pageContext.request.contextPath }/assets/images/adminPerson.png">
+											</a>
+										</c:otherwise>
+									</c:choose>
+								</c:when>	
 								<c:otherwise>
-									<a class="button-register" href="${pageContext.request.contextPath }/member/login.me">로그인/회원가입</a>
+									<a class="button-register" href="${pageContext.request.contextPath }/member/join.me">회원가입</a>
 								</c:otherwise>
 							</c:choose>	
 						</div>
@@ -75,7 +82,7 @@
 							<div class="user-content">
 								<img class="profile-image" src="${pageContext.request.contextPath }/assets/images/adminPerson.png">								
 								<c:choose>
-									<c:when test="${empty sessionScope.memberNumber }">
+									<c:when test="${empty sessionScope.currentInfoMemberNumber }">
 										<a class="profile-login" href="${pageContext.request.contextPath }/member/login.me">
 											로그인하세요
 											<img src="${pageContext.request.contextPath }/assets/images/blackArrowRight.png">
@@ -100,7 +107,7 @@
 							<a href="${pageContext.request.contextPath }/lecture/listAll.lect">
 								<div>강연</div>
 							</a>
-							<a href="">
+							<a href="javascript:void(0)" onclick="noService()">
 								<div>이용방법</div>
 							</a>
 						</div>
@@ -116,15 +123,15 @@
 								<li><a href="${pageContext.request.contextPath }/question/listInvestment.ques">제테크</a></li>
 								<li><a href="${pageContext.request.contextPath }/question/Foundation.ques">창업</a></li>
 								<li><a href="${pageContext.request.contextPath }/question/Etc.ques">기타</a></li>
-								<li><a href="javascript:void(0)">공지사항</a></li>
-								<li><a href="javascript:void(0)">소개</a></li>
+								<li><a href="javascript:void(0)" onclick="noService()"> 공지사항</a></li>
+								<li><a href="javascript:void(0)" onclick="noService()">소개</a></li>
 							</ul>
 						</div>
 						
 						<c:choose>
-							<c:when test="${empty sessionScope.memberNumber }">
+							<c:when test="${empty sessionScope.currentInfoMemberNumber }">
 								<div class="sidebar-login">
-									<a href="${pageContext.request.contextPath }/member/joinOk.me">회원가입</a>
+									<a href="${pageContext.request.contextPath }/member/join.me">회원가입</a>
 								</div>
 							</c:when>
 							<c:otherwise>
@@ -139,7 +146,7 @@
 		</div>
 	</div>
 </body>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="${pageContext.request.contextPath }/assets/js/sidebar.js" type="text/javascript"></script>
 <script>
 
@@ -153,5 +160,9 @@
 		console.log("들어모");
 		searchForm.submit();
 	}
+	
+	function noService(){
+		alert("서비스를 준비중입니다. 불편을 끼쳐 드려 죄송합니다.");
+	};
 </script>
 </html>

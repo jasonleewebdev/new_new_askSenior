@@ -34,7 +34,7 @@
 				</a>
 			</div>
 			<div class="text-center border-right">
-				<a href="">
+				<a href="javascript:void(0)" onclick="noService()">
 					<button class="">
 						<span class="button-content">이용방법</span>
 					</button>
@@ -221,6 +221,12 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
 		let contextPath = "${pageContext.request.contextPath}";
+		function noService(){
+			alert("서비스를 준비중입니다. 불편을 끼쳐 드려 죄송합니다.");
+		};
 </script>
 <script src="${pageContext.request.contextPath }/assets/js/main.js"></script>
+
+<script src="${pageContext.request.contextPath }/assets/js/sidebar.js" type="text/javascript"></script>
+
 </html>

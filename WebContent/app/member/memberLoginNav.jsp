@@ -8,12 +8,12 @@
 <title></title>
 </head>
 <body>
-	<div id="layout">
+   <div id="layout">
         <div class="main_layout">
             <div class="main_view">
                 <div class="main">
                     <div class="main_left">
-                        <a href="">home</a>
+                        <a href="${pageContext.request.contextPath }/main/main.ma">home</a>
                         <h3 class="main_left_text">Ask Senior</h3>
                     </div>
                     <div class="main_right">
@@ -26,21 +26,23 @@
                                         <button class="start_kakao b_size b_margin">
                                             <img class="kakao_icon" src="../../assets/images/kakao.png">
                                                 <use></use>
+                                                
                                             </img>
-                                            카카오로 시작하기
+                                            카카오로 로그인
                                         </button>
                                         <button class="start_naver b_size b_margin">
                                             <img class="naver_icon" src="../../assets/images/naver.png">
                                                 <use></use>
                                             </img>
-                                            네이버로 시작하기
+                                            네이버로 로그인
                                         </button>
-                                        <button class="start_email b_size b_margin">
+                                        <button onclick ="location.href='/member/login.me'" class="start_email b_size b_margin">
                                             <img class="email_icon" src="../../assets/images/email.png">
                                                 <use></use>
                                             </img>
-                                            이메일로 시작하기
+                                            이메일 로그인
                                         </button>
+                                          <a style="color:black; text-decoration:none" href="/member/join.me">회원가입</a>
                                         <button class="bottom_button">
                                             
                                         </button>
