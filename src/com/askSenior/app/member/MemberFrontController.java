@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.askSenior.app.Result;
 
-
-
 public class MemberFrontController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,15 +31,16 @@ public class MemberFrontController extends HttpServlet{
 			result = new Result();
 			result.setPath("/app/member/memberJoin.jsp");
 			
-		}else if(target.equals("/member/joinOk.me")) {
-			result = new JoinOkController().execute(req, resp);
+		}
+		else if(target.equals("/member/joinOk.me")) {
+//			result = new JoinOkController().execute(req, resp);
 		}else if(target.equals("/member/checkEmail.me")) {
 			new CheckEmailController().execute(req, resp);
 		}else if(target.equals("/member/login.me")) {
 			result = new Result();
 			result.setPath("/app/member/memberLogin.jsp");
 		}else if(target.equals("/member/loginOk.me")) {
-			new LoginOkController().execute(req, resp);
+			result=new LoginOkController().execute(req, resp);
 		}else if(target.equals("/member/mypage.me")) {
 			
 		}else if(target.equals("/member/mypageUpdate.me")) {

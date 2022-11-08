@@ -19,15 +19,16 @@ public class JoinOkController implements Execute{
 		MemberVO memberVO = new MemberVO();
 		Result result = new Result();
 		
+		
 		memberVO.setMemberEmail(req.getParameter("memberEmail"));
 		memberVO.setMemberPassword(req.getParameter("memberPw"));
 		
-		memberDAO.join(null);
 		
 		result.setRedirect(true);
 		result.setPath(req.getContextPath() + "/app/member/login.jsp");
 		
-		return result;
+		memberDAO.join(memberVO);
+		return null;
 	}
 
 }

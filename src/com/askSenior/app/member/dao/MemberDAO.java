@@ -23,12 +23,17 @@ public class MemberDAO {
 	public void join(MemberVO memberVO) {
 		sqlSession.insert("member.join",memberVO);
 	}
-	public int login(String memberEmail, String memberPw) 
+	public int login(String memberEmail, String memberPw) throws NullPointerException 
 	{
+		MemberVO memberVO = null;
 		HashMap<String, String>loginMap= new HashMap<String, String>();
+		
 		loginMap.put("memberEmail", memberEmail);
 		loginMap.put("memberPw", memberPw);
-		return sqlSession.selectOne("member.login", loginMap);
+		
+		System.out.println(loginMap);
+		memberVO= sqlSession.selectOne("member.login", loginMap);
+		return memberVO == null ? 0 : memberVO.getMemberNumber();
 	}
 
 }

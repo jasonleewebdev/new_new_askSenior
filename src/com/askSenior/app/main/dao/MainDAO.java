@@ -24,5 +24,6 @@ public SqlSession sqlSession;
 		return sqlSession.selectList("main.selectAnswer", questionCategory);
 	}
 
+
 }
 
