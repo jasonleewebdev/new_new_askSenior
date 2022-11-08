@@ -23,14 +23,15 @@ public class LoginOkController implements Execute{
 		MemberDAO memberDAO = new MemberDAO();
 		Result result = new Result();
 		
-		System.out.println(memberEmail);
-		System.out.println(memberPw);
+//		System.out.println(memberEmail);
+//		System.out.println(memberPw);
 		 
 		memberNumber = memberDAO.login(memberEmail, memberPw);		
 		if(memberNumber!=0) {
 //			result.setPath(""); //���������� ���
-			int currentInfoMemberNumber=2; HttpSession session = req.getSession();
-			 session.setAttribute("currentInfoMemberNumber", currentInfoMemberNumber);
+//			int currentInfoMemberNumber = 1;
+			HttpSession session = req.getSession();
+			 session.setAttribute("currentInfoMemberNumber", memberNumber);
 			//result.setPath("/question/listAll.ques"); 
 			 result.setPath("/main/main.ma");
 		}

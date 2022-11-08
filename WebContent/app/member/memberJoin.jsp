@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/member/memberJoin.css">
 <title>회원가입</title>
 </head>
-<style>	
-	span#result{
-		color:red;
-	}
+<style>   
+   span#result{
+      color:red;
+   }
 </style>
 <body>
-	<div class="layout">
+   <div class="layout">
         <div class="layout_default">
             <main class="layout_view">
                 <div class="join_login">
-                    <form method="post" action="${pageContext.request.contextPath}/member/joinOk.me}" class="join_login_form size_full" name="joinForm">
+                    <form method="post" action="${pageContext.request.contextPath}/app/member/memberLoginNav.jsp" class="join_login_form size_full" name="joinForm">
                         <div class="screen">
                             <header class="screen_header">
                                 <!-- button -->
@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             <footer class="screen_footer">
-                                <button type="submit" class="join_btn" onclick="test()">회원 가입</button>
+                                <button type="submit" class="join_btn" onclick="send()">회원 가입</button>
                             </footer>
                         </div>
                     </form>
@@ -97,30 +97,31 @@
 <script>
 $(document).ready(function(){
 
-	  $('.eyes').on('click', function(){
-	    var passwordField = $('.pw');
-	    var passwordFieldType = passwordField.attr('type');
+     $('.eyes').on('click', function(){
+       var passwordField = $('.pw');
+       var passwordFieldType = passwordField.attr('type');
 
-	    if(passwordFieldType == 'password')
-	    {
-	        passwordField.attr('type', 'text');
-	        $(this).val('Hide');
-	    } else {
-	        passwordField.attr('type', 'password');
-	        $(this).val('Show');
-	    }
-	    
-	  });
+       if(passwordFieldType == 'password')
+       {
+           passwordField.attr('type', 'text');
+           $(this).val('Hide');
+       } else {
+           passwordField.attr('type', 'password');
+           $(this).val('Show');
+       }
+       
+     });
 });
-/* $(function(){
-	$('#memberPw2').blur(function(){
-	   if($('#memberPw').val() != $('#memberPw2').val()){
-	    	if($('#memberPw2').val()!=''){
-	    	  $('#memberPw2').val('');
-	          $('#memberPw2').focus();
-	       }
-	    }
-	})  	   
-}); */
+ $(function(){
+   $('#memberPw2').blur(function(){
+      if($('#memberPw').val() != $('#memberPw2').val()){
+          if($('#memberPw2').val()!=''){
+            alert("비밀번호가 다릅니다.");
+            $('#memberPw2').val('');
+             $('#memberPw2').focus();
+          }
+       }
+   })        
+});
 </script>
 </html>
