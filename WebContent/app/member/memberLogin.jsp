@@ -19,7 +19,7 @@
         <div class="layout_default">
             <main class="layout_view">
                 <div class="join_login">
-                    <form method="post" action="${pageContext.request.contextPath}/member/LoginOk.me}" class="join_login_form size_full" name="joinForm">
+                    <form method="post" action="${pageContext.request.contextPath}/member/loginOk.me" class="join_login_form size_full" name="joinForm">
                         <div class="screen">
                             <header class="screen_header">
                                 <!-- button -->
