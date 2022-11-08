@@ -10,3 +10,4 @@ public interface Execute {
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServerException;
 	
 }
+

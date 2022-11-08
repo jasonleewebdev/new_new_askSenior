@@ -38,7 +38,14 @@ public class AdminFrontController extends HttpServlet{
 			
 			result = new MemberDetailController().execute(req, resp);
 			
-		}else if(target.equals("/admin/memberUpdate.admin")) {
+		}
+		/*
+		 * else if(target.equals("/admin/memberList.admin")) { //멤버 카테고리
+		 * 
+		 * new MemberListCategoryController().execute(req, resp);
+		 * 
+		 * }
+		 */else if(target.equals("/admin/memberUpdate.admin")) {
 			//멤버 수정 하기
 			
 			result = new MemberUpdateController().execute(req, resp);
