@@ -30,7 +30,7 @@ public SqlSession sqlSession;
 		return sqlSession.selectOne("answer.recommendCount",answerNumber);
 	}
 	
-	public void noMemberNumberAnswerInsert(AnswerVO answerVO) {
-		sqlSession.selectOne("answer.noMemberNumberAnswerInsert",answerVO);
+	public void AnswerInsert(AnswerVO answerVO) {
+		sqlSession.selectOne("answer.AnswerInsert",answerVO);
 	}
 }

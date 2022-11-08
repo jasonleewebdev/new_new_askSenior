@@ -89,9 +89,13 @@
 	
 	<update id="questionUpdateInsert" parameterType="questionVO">
 		update tbl_question
-		set question_category=#{questionCategory},question_title=#{questionTitle},question_content=#{questionContent}
-		where member_number=#{memberNumber}
+		set member_number=#{memberNumber},question_category=#{questionCategory},question_title=#{questionTitle},question_content=#{questionContent}
+		where question_number=#{questionNumber}
 	</update>
 	
+	<delete id="questionDelete" parameterType="_int">
+		delete from tbl_question
+		where question_number=#{questionNumber}
+	</delete>
 </mapper>
 

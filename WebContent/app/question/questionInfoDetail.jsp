@@ -172,13 +172,13 @@
                     <div class="button-wrapper" id="questionRelativeButton" style="width: 60%;">
                           
                         <!--  <button class="interesting-question-button clicked-button">-->
-                         <button class="interesting-question-button">
+                         <button class="interesting-question-button" onclick="alert('서비스개발중입니다.')">
                             <i class="fa-solid fa-star"></i>관심<span id="interestingQuestionCount">${interestingQuestionCount}</span>
                         </button>
-                        <button class="recommanding-button">
+                        <button class="recommanding-button" onclick="alert('서비스개발중입니다.')">
                             <i class="fa-solid fa-thumbs-up"></i> 추천 <span id="recommandingQuestionCount">${recommendingQuestionCount} </span>
                         </button>
-                        <button class="like-button">
+                        <button class="like-button" onclick="alert('서비스개발중입니다.')">
                             <i class="fa-solid fa-heart"></i>좋아요<span id="likeQuestionCount">${likeQuestionCount}</span>
                         </button>
                      
@@ -186,7 +186,7 @@
                      <c:if test="${sessionScope.currentInfoMemberNumber == questionDetail.getMemberNumber()}">
 	                    <div id="updateAndRemove">
 	                    	<button onclick="location.href='${pageContext.request.contextPath}/question/updateQuestion.ques?qbunho=${questionDetail.getQuestionNumber()}'">수정</button>
-	                    	<button>삭제</button>
+	                    	<button onclick="location.href='${pageContext.request.contextPath}/question/deleteQuestionOK.ques?qbunho=${questionDetail.getQuestionNumber()}'">삭제</button>
 	                    </div>
                     </c:if>
                 </div>
@@ -221,7 +221,8 @@
                 </div>
             </div>
             -->
-            <button class="answer-button" onclick="location.href='${pageContext.request.contextPath}/answer/writeAnswer.answ?qbunho=${questionDetail.getQuestionNumber()}'">답변하기</button>
+            <button class="answer-button" onclick="checkAnswerWritePrivilege();">답변하기</button>
+            <%-- <button class="answer-button" onclick="location.href='${pageContext.request.contextPath}/answer/writeAnswer.answ?qbunho=${questionDetail.getQuestionNumber()}'">답변하기</button>--%>
             <!-- 로그인을 하지 않은 상태에서 답변하기 클릭 시 -->
             <button class="answer-button-open-modal">Modal 띄우기</button>
 
@@ -245,10 +246,10 @@
                     </div>    
                     <div>
                         <div class="button-wrapper" id="answerRelativeButton">
-                            <button class="recommanding-button">
+                            <button class="recommanding-button" onclick="alert('서비스개발중입니다.')">
                                 <i class="fa-solid fa-thumbs-up"></i> 추천 <span id="recommandingAnswerCount">${recommendAnswerCountList.get(status.index)} </span>
-                            </button>
-                            <button class="like-button">
+                            </button >
+                            <button class="like-button" onclick="alert('서비스개발중입니다.')">
                                 <i class="fa-solid fa-heart"></i> 좋아요 <span id="likeAnswerCount">${likeAnswerCountList.get(status.index)}</span>
                             </button>
                         </div>
@@ -292,16 +293,16 @@
 			
             <div class="pager-button-group">
                 <!-- 이전 버튼 또는 이후 버튼 없을 시 버튼 비활성화 하고 색 변경하기 -->
-                <button class="pager-button disabled-pager-button" disabled><i class="fa-solid fa-arrow-left"></i>이전 질문</button>
-                <button class="pager-button" onclick="${pageContext.request.contextPath}location.href='/question/listAll.ques'"><i class="fa-solid fa-list"></i>질문 목록</button>
-                <button class="pager-button">다음 질문<i class="fa-solid fa-arrow-right"></i></button>
+                <button class="pager-button disabled-pager-button" onclick="alert('서비스개발중입니다');"><i class="fa-solid fa-arrow-left"></i>이전 질문</button>
+                <button class="pager-button" onclick="location.href='${pageContext.request.contextPath}/question/listAll.ques'"><i class="fa-solid fa-list"></i>질문 목록</button>
+                <button class="pager-button" onclick="alert('서비스개발중입니다');">다음 질문<i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </section>
 
         <!-- 어사이드 -->
         <aside>
             <div><a href="#"><img src="http://sinchon.koreaisacademy.com/m/img/main2017/m_it_banner_211126.jpg"></a></div>
-            <button class="question-button" onclick="location.href='${pageContext.request.contextPath}/question/writeQuestion.ques'">나도 질문하기</button>
+            <button class="question-button" onclick="checkQuestionWritePrivilege();">나도 질문하기</button>
             <!-- 로그인을 하지 않은 상태에서 답변하기 클릭 시 -->
             <button class="question-button-open-modal">Modal 띄우기</button>
         </aside>
@@ -341,7 +342,7 @@
 <script src="${pageContext.request.contextPath}/assets/js/faq.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/assets/js/askLoginModal.js" type="text/javascript"></script>
 <script>
-let questionInteresting=0;
+/*  let questionInteresting=0;
 	$("#questionRelativeButton").children().eq(0).on("click",function(){
 		console.log(questionInteresting);
 		console.log($(this));
@@ -351,7 +352,7 @@ let questionInteresting=0;
 			}
 			else{
 				$(this).addClass('clicked-button');
-			}
+			} */
 			
 			/* $.ajax({
 			    url: "${pageContext.request.contextPath}/question/scrap.ques", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
@@ -362,7 +363,7 @@ let questionInteresting=0;
 			    
 			}); */
 			
-			questionInteresting++;
+	/* 		questionInteresting++;
 		}
 		else{
 			
@@ -371,7 +372,7 @@ let questionInteresting=0;
 			}
 			else{
 				//아무것도 안함
-			}
+			} */
 			/* $.ajax({
 			    url: "${pageContext.request.contextPath}/question/scrap.ques", // 클라이언트가 HTTP 요청을 보낼 서버의 URL 주소
 			    data: { questionNumber: ${questionDetail.getQuestionNumber()},count:-1,memberNumber:${sessionScope.memberNumber}}, // HTTP 요청과 함께 서버로 보낼 데이터
@@ -381,12 +382,54 @@ let questionInteresting=0;
 			    
 			}); */
 			
-			questionInteresting--;
+		/* 	questionInteresting--;
 		}
 	});
 	
 	function showInterestingCount(count){
 		$("#interestingQuestionCount").html(count);
-	}
+	}  */
+	
+	
+	function checkQuestionWritePrivilege(){
+		 let currentInfoMemberNumber="${sessionScope.currentInfoMemberNumber}";
+		 console.log("${sessionScope.currentInfoMemberNumber}");
+		 //"null"이 아니라 ""로 빈문자열을 비교해야한다.
+		 if(currentInfoMemberNumber==""){
+			  let check=confirm("로그인을 하시겠습니까?");
+			 if(check){
+				 location.href="${pageContext.request.contextPath}/member/login.me";
+			 } 
+			 else{
+				 location.href="${pageContext.request.contextPath}/question/listAll.ques";
+			 }
+			
+		 }
+		 else{
+			 location.href='${pageContext.request.contextPath}/question/writeQuestion.ques';
+		 }
+		 
+	 };
+	 
+	 function checkAnswerWritePrivilege(){
+		 let currentInfoMemberNumber="${sessionScope.currentInfoMemberNumber}";
+		 console.log("${sessionScope.currentInfoMemberNumber}");
+		 //"null"이 아니라 ""로 빈문자열을 비교해야한다.
+		 if(currentInfoMemberNumber==""){
+			  let check=confirm("로그인을 하시겠습니까?");
+			 if(check){
+				 location.href="${pageContext.request.contextPath}/member/login.me";
+			 } 
+			 else{
+				 location.href="${pageContext.request.contextPath}/question/listAll.ques";
+			 }
+			
+		 }
+		 else{
+			 
+			 location.href='${pageContext.request.contextPath}/answer/writeAnswer.answ?qbunho=${questionDetail.getQuestionNumber()}';
+		 }
+		 
+	 };
 </script>
 </html>

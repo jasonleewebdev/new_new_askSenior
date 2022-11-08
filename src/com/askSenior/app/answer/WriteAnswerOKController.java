@@ -5,6 +5,7 @@ import java.rmi.ServerException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.askSenior.app.Execute;
 import com.askSenior.app.Result;
@@ -20,12 +21,16 @@ public class WriteAnswerOKController implements Execute{
 		Result result= new Result();
 		AnswerVO answerVO= new AnswerVO();
 		AnswerDAO answerDAO= new AnswerDAO();
+		
+		 HttpSession session = req.getSession();
+		int memberNumber=(int)session.getAttribute("currentInfoMemberNumber");
 		String answerContent=req.getParameter("answerContent");
 		
+		answerVO.setMemberNumber(memberNumber);
 		answerVO.setQuestionNumber(qbunho);
 		answerVO.setAnswerContent(answerContent);
 		
-		answerDAO.noMemberNumberAnswerInsert(answerVO);
+		answerDAO.AnswerInsert(answerVO);
 		
 		
 		
