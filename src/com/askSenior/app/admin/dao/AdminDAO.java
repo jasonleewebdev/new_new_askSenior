@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.askSenior.app.admin.vo.AdminVO;
+import com.askSenior.app.admin.vo.Criteria;
 import com.askSenior.app.answer.vo.AnswerVO;
 import com.askSenior.app.lecture.vo.LectureVO;
 import com.askSenior.app.member.vo.MemberVO;
@@ -29,6 +30,11 @@ public SqlSession sqlSession;
 		return sqlSession.selectOne("admin.memberDetail",mbunho);
 	}
 
+	public List<MemberVO> categoryAll(Criteria criteria){
+		
+		return sqlSession.selectList("admin.categoryAll",criteria);
+	}
+	
 	public int MemberTotal() {
 		return sqlSession.selectOne("admin.memberTotal");
 	}

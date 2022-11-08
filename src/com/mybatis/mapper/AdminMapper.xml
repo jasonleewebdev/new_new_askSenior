@@ -10,9 +10,53 @@
 	</select>
 
 
-	<!-- <select id="selectAll"  resultType="memberVO">
-		select * from tbl_member
-	</select> -->
+	<select id="categoryAll" parameterType="criteria" resultType="memberVO">
+		select member_number, member_email, member_nickname, member_name from tbl_member
+		<where>
+		<if test="type != 'none'.toString() and way != 'none'.toString()">
+			<trim prefixOverrides="or">
+				<foreach item="type" collection="types">
+					<trim prefix="or">	
+						<choose>
+							<when test="type == 'm'.toString()">
+								member_number like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type == 'e'.toString()">
+								member_email like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type == 'N'.toString()">
+								member_nickname like concat('%', #{keyword}, '%')
+							</when>
+							<when test="type == 'n'.toString()">
+								member_name like concat('%', #{keyword}, '%')
+							</when>
+						</choose>
+					</trim>	
+				</foreach>
+			</trim>
+		</if>
+		</where>
+		<if test="">
+			desc
+			
+			<!-- order by
+			<choose>
+				<when test="type == 'm'.toString()">
+					member_number = #{keyword}
+				</when>
+				<when test="type == 'e'.toString()">
+					member_email = #{keyword}
+				</when>
+				<when test="type == 'N'.toString()">
+					member_nickname = #{keyword}
+				</when>
+				<when test="type == 'n'.toString()">
+					member_name = #{keyword}
+				</when>
+			</choose> -->
+		</if>
+		
+	</select>
 	
 	<select id="memberDetail" parameterType="_int" resultType="memberVO" >
 		select * from tbl_member where member_number = #{mbunho}

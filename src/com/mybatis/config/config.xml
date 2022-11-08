@@ -19,6 +19,8 @@
       <typeAlias type="com.askSenior.app.question.vo.NewSearchTitlePagenationDTO" alias="newSearchTitlePagenationDTO"/>
       <typeAlias type="com.askSenior.app.question.vo.CategoryPagenationDTO" alias="categoryPagenationDTO"/>
       <typeAlias type="com.askSenior.app.main.vo.RecommendedAnswerDTO" alias="recommendedAnswerDTO"/> 
+      <typeAlias type="com.askSenior.app.main.vo." alias="recommendedAnswerDTO"/> 
+      <typeAlias type="com.askSenior.app.main.vo.criteria" alias="criteria"/> 
    </typeAliases>
    
    <environments default="mysql">

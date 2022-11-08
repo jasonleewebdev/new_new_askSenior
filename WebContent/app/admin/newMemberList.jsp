@@ -142,7 +142,7 @@
                     <div class="subnavigation_how">
                         <div class="subnavigation_how_title">카테고리</div>
                         <div class="subnavigation_how_main">
-                            <select class="selectnormalcolor" name=type>
+                            <select class="selectnormalcolor" name="type" id="type">
                                 <option value="m">회원번호</option>
                                 <option value="e">이메일</option>
                                 <option value="N">닉네임</option>
@@ -160,7 +160,7 @@
                             </select>
                         </div>
                     </div>
-                    <div id="inquire"><button onclick="show()">조회</button></div>
+                    <div id="inquire"  name="keyword" id="keyword"><button onclick="show()">조회</button></div>
                 </div>
 
             </div>
@@ -168,7 +168,7 @@
             <div id="subnavigation_result_body">
                 <div id="subnavigation_search_and_delete">
                     <div id="subnavigation_search">
-                        <span></span>
+                        <span onclick="show()" style="cursor:pointer"></span>
                         <input type="text" name="search_member" placeholder="검색"/>
                     </div>
                     
@@ -411,6 +411,7 @@
         </div>
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script>
     let flag=0;
     let prev;
@@ -495,6 +496,37 @@ $(document).ready(function(){
 	   console.log(req.setAttribute("name",selectMemberNumber));
    })
 });
+	show();
+
+	function show(order){
+		let type = $("#type").val() || 'none';
+		let keyword = $("#keyword").val() || 'none';
+		order = order || 'none';
+		
+		let text = "";
+		
+		$.ajax({
+			url: "${pageContext.request.contextPath}/admin/memberList.admin",
+			type: "get",
+			data: {type: type, keyword: keyword, order: order},
+			dataType: "json", 
+			success:function(result){
+				$(results).each(function(i, result){
+					text += `<li>` + result.memberNumber + `&nbsp;&nbsp;`;
+					text += result.memberEmail + `&nbsp;&nbsp;`;
+					text += result.memberNickname + `&nbsp;&nbsp;`;
+					text += result.memberName + `</li>`;
+				})
+				
+				if(results.length == 0){
+					text = "검색 결과가 없습니다";
+				}
+				$("#result").html(text);
+			}
+		});
+		
+	}
+
 </script>
 
 </html>

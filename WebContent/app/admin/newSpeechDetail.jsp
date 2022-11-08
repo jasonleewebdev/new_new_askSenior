@@ -113,8 +113,8 @@
                     <span>강연들 목록입니다</span>
                 </div>
                 <div id="subnavigation_how_array">
-                    <div class="subnavigation_how">
-                        <!-- <div class="subnavigation_how_title">카테고리</div>
+                    <!-- <div class="subnavigation_how">
+                        <div class="subnavigation_how_title">카테고리</div>
                         <div class="subnavigation_how_main">
                             <select class="selectnormalcolor">
                                 <option>생활</option>
