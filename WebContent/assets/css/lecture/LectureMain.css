@@ -210,7 +210,7 @@ button {
 }
 /* 네비 */
 nav {
-  width: 260px;
+  width: 100%;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
@@ -350,8 +350,7 @@ li hr {
 }
 /* aside */
 aside {
-  width: 240px;
-  margin-left: 24rem;
+  width: 100%;
   margin-top: 40px;
 }
 

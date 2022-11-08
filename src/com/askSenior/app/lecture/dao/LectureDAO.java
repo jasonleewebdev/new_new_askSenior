@@ -19,8 +19,8 @@ public class LectureDAO {
 		sqlSession.insert("lecture.insert", lectureVO);
 	}
 	
-	public List<LectureVO> selectAll(HashMap<String, Integer> pageMap) {
-		return sqlSession.selectList("board.selectAll", pageMap);
+	public List<LectureVO> selectAll(LectureVO lectureVO) {
+		return sqlSession.selectList("lecture.selectAll", lectureVO);
 	}
 	
 	public int getTotal() {
