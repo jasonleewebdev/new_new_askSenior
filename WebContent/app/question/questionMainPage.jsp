@@ -137,7 +137,7 @@
             </ul>
         </nav>
         <!-- 섹션 -->
-        <section>
+        <section id="mainSection">
             <div>
                 <div class="tabs">
                     <button>추가 답변하기</button>
@@ -160,7 +160,8 @@
 		                    </div>
 		                    <div class="article-right">
 		                        <header>
-		                            <a href="${pageContext.request.contextPath}/question/detail.ques?qbunho=${question.getQuestionNumber()}"><h1><c:out value="${question.getQuestionTitle()}"/></h1></a>
+		                        <%--  <a id="goDetail" href="javascript:void();" ><h1><c:out value="${question.getQuestionTitle()}"/></h1></a>--%>
+		                              <a href="${pageContext.request.contextPath}/question/detail.ques?qbunho=${question.getQuestionNumber()}"><h1><c:out value="${question.getQuestionTitle()}"/></h1></a>
 		                        </header>
 		                        <div class="article-bottom">
 		                            <div class="icon-conatiner">
@@ -254,7 +255,8 @@
         <!-- 어사이드 -->
         <aside>
             <div><a href="#"><img src="http://sinchon.koreaisacademy.com/m/img/main2017/m_it_banner_211126.jpg"></a></div>
-            <button class="question-button" onclick="location.href='${pageContext.request.contextPath}/question/writeQuestion.ques'">나도 질문하기</button>
+            <button class="question-button" onclick="checkQuestionWritePrivilege();">나도 질문하기</button>
+           <%-- <button class="question-button" onclick="location.href='${pageContext.request.contextPath}/question/writeQuestion.ques'">나도 질문하기</button>--%>
         </aside>
     </main>
     
@@ -289,4 +291,53 @@
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/sidebar.js" type="text/javascript"></script>
 <script src="${pageContext.request.contextPath}/assets/js/faq.js" type="text/javascript"></script>
+<script>
+/* console.log("${sessionScope.currentInfoMemberNumber}");
+//console.log(1);
+ function goQuestionDetail(){
+	let currentInfoMemberNumber="${sessionScope.currentInfoMemberNumber}";
+	//console.log($(this).attr('location.href'));
+	if(currentInfoMemberNumber==null){
+		let check=confirm("로그인을 하시겠습니까?");
+		if(check){
+			//a태그를 누르고 a태그의 href를 바꾸는건 말이 안된다.
+			//$(this).attr('location.href','${pageContext.request.contextPath}/member/login.me');
+			//location.href="${pageContext.request.contextPath}/member/login.me";
+		}
+		else{
+			alert("로그인을 안하면 들어갈수없습니다.");
+		}
+	}
+	//foreach 구문 바깥이라 question변수를 인식하지 못한다.
+	//$(this).attr('location.href','${pageContext.request.contextPath}/question/detail.ques?qbunho=${question.getQuestionNumber()}');
+	//console.log("${pageContext.request.contextPath}/question/detail.ques?qbunho=${question.getQuestionNumber()}");
+};
+$("#mainSection").on("click","#goDetail",goQuestionDetail); 
+console.log("들어옴");
+ */
+
+ //타입이 string
+ //console.log("${sessionScope.currentInfoMemberNumber}");
+ //console.log(typeof("${sessionScope.currentInfoMemberNumber}"));
+function checkQuestionWritePrivilege(){
+	 let currentInfoMemberNumber="${sessionScope.currentInfoMemberNumber}";
+	 console.log("${sessionScope.currentInfoMemberNumber}");
+	 //"null"이 아니라 ""로 빈문자열을 비교해야한다.
+	 if(currentInfoMemberNumber==""){
+		  let check=confirm("로그인을 하시겠습니까?");
+		 if(check){
+			 location.href="${pageContext.request.contextPath}/member/login.me";
+		 } 
+		 else{
+			 location.href="${pageContext.request.contextPath}/question/listAll.ques";
+		 }
+		
+	 }
+	 else{
+		 location.href='${pageContext.request.contextPath}/question/writeQuestion.ques';
+	 }
+	 
+ };
+ 
+</script>
 </html>

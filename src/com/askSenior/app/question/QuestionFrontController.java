@@ -53,6 +53,10 @@ public class QuestionFrontController extends HttpServlet{
 			//나도 질문하기 업데이트후 디비에 넘기기
 //			result=new updateQuestionOKController().execute(req, resp);
 		}
+		else if(target.equals("/question/deleteQuestionOK.ques")) {
+			//나도 질문하기 업데이트후 디비에 넘기기
+			result=new deleteQuestionOKController().execute(req, resp);
+		}
 		else if(target.equals("/question/listLife.ques")) {
 			//생활 목록 현재 없음
 			//result=new ListLifeController().execute(req, resp);
