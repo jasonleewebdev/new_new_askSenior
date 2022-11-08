@@ -19,9 +19,9 @@
 					</div>
 					<div>
 						<ul class="footer-menu">
-							<li><a>시니어에게 물어봐 소개</a></li>
-							<li><a>이용약관</a></li>
-							<li><a>공지 사항</a></li>
+							<li><a href="javascript:void(0)">시니어에게 물어봐 소개</a></li>
+							<li><a href="javascript:void(0)">이용약관</a></li>
+							<li><a href="javascript:void(0)">공지 사항</a></li>
 						</ul>
 						<ul class="footer-information">
 							<li><span>법인명 : dev-web-junior 주식회사</span></li>

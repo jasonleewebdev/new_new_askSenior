@@ -3,6 +3,7 @@ package com.askSenior.app.member;
 import java.io.IOException;
 import java.rmi.ServerException;
 
+import javax.management.RuntimeErrorException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,17 +18,21 @@ public class LoginOkController implements Execute{
 		String memberEmail = req.getParameter("memberEmail");
 		String memberPw = req.getParameter("memberPw");
 		int memberNumber = 0;
+		
 		MemberDAO memberDAO = new MemberDAO();
 		Result result = new Result();
 		
-		try {
-			memberDAO.login(memberEmail, memberPw);			
-		} catch (Exception e) {
-			e.printStackTrace();
+		System.out.println(memberEmail);
+		System.out.println(memberPw);
+		 
+		memberNumber = memberDAO.login(memberEmail, memberPw);		
+		if(memberNumber!=0) {
+//			result.setPath(""); //메인페이지 경로
+		}
+		else{
 			result.setPath("/member/login.me?login=false");
 		}
-		
-		return null;
+		return result;
 	}
 
 }

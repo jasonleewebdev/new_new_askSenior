@@ -18,7 +18,7 @@ public class CheckEmailController implements Execute{
 		MemberDAO memberDao = new MemberDAO();
 		memberDao.checkId(memberEmail);
 		resp.getWriter().print(memberDao.checkId(memberEmail));
-		return null;
+		return null;	
 	}
 
 }

@@ -145,7 +145,7 @@ input:focus {
 }
 
 .register {
-  display: inline-block;
+  line-height: 1rem;
 }
 
 .button-register {
@@ -155,7 +155,7 @@ input:focus {
   font-size: 1rem;
   font-weight: 500;
   border-width: 0;
-  color: #fff;
+  color: #fff !important;
   cursor: pointer;
 }
 
