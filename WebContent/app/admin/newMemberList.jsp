@@ -411,7 +411,7 @@
         </div>
     </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script> -->
 <script>
     let flag=0;
     let prev;
@@ -496,7 +496,7 @@ $(document).ready(function(){
 	   console.log(req.setAttribute("name",selectMemberNumber));
    })
 });
-	show();
+	/* show();
 
 	function show(order){
 		let type = $("#type").val() || 'none';
@@ -525,7 +525,7 @@ $(document).ready(function(){
 			}
 		});
 		
-	}
+	} */
 
 </script>
 

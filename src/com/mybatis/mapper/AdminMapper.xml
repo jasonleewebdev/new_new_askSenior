@@ -10,7 +10,7 @@
 	</select>
 
 
-	<select id="categoryAll" parameterType="criteria" resultType="memberVO">
+	<!-- <select id="categoryAll" parameterType="criteria" resultType="memberVO">
 		select member_number, member_email, member_nickname, member_name from tbl_member
 		<where>
 		<if test="type != 'none'.toString() and way != 'none'.toString()">
@@ -39,7 +39,7 @@
 		<if test="">
 			desc
 			
-			<!-- order by
+			order by
 			<choose>
 				<when test="type == 'm'.toString()">
 					member_number = #{keyword}
@@ -53,10 +53,10 @@
 				<when test="type == 'n'.toString()">
 					member_name = #{keyword}
 				</when>
-			</choose> -->
+			</choose>
 		</if>
 		
-	</select>
+	</select> -->
 	
 	<select id="memberDetail" parameterType="_int" resultType="memberVO" >
 		select * from tbl_member where member_number = #{mbunho}
@@ -80,9 +80,7 @@
 		limit #{startRow}, #{rowCount}
 	</select>
 	
-	<!-- <select id="questionAll"  resultType="questionVO">
-		select * from tbl_question
-	</select> -->
+	
 	
 	<select id="questionDetail" parameterType="_int" resultType="questionVO" >
 		select * from tbl_question where question_number = #{qbunho}
@@ -105,9 +103,7 @@
 		limit #{startRow}, #{rowCount}
 	</select>
 	
-	<!-- <select id="answerAll"  resultType="answerVO">
-		select * from tbl_answer
-	</select> -->
+	
 	
 	<select id="answerDetail" parameterType="_int" resultType="answerVO" >
 		select * from tbl_answer where answer_number = #{abunho}
@@ -128,9 +124,7 @@
 		limit #{startRow}, #{rowCount}
 	</select>
 	
-	<!-- <select id="lectureAll"  resultType="lectureVO">
-		select * from tbl_lecture
-	</select> -->
+
 	
 	<select id="lectureDetail" parameterType="_int" resultType="lectureVO" >
 		select * from tbl_lecture where lecture_number = #{lbunho}
@@ -147,9 +141,7 @@
 		limit #{startRow}, #{rowCount}
 	</select>
 	
-	<!-- <select id="noticeAll"  resultType="noticeVO">
-		select * from tbl_notice
-	</select -->
+
 	
 	<select id="noticeDetail" parameterType="_int" resultType="noticeVO" >
 		select * from tbl_notice where notice_number = #{nbunho}
